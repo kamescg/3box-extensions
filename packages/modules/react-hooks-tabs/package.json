@@ -1,0 +1,115 @@
+{
+  "name": "@horizin/react-hooks-tabs",
+  "description": "React Context Tabs",
+  "version": "1.0.0",
+  "author": "Kames <info@kamescg.com> (https://www.kamescg.com)",
+  "keywords": [
+    "react-context-tabs"
+  ],
+  "main": "dist/index.js",
+  "main:src": "src/index.js",
+  "scripts": {
+    "build": "cross-env BABEL_ENV=production babel src --out-dir dist",
+    "bundle": "webpack --config ./config/webpack.config.js",
+    "watch": "nodemon --exec cross-env BABEL_ENV=production babel src --out-dir dist",
+    "test": "npm run lint && npm run ava",
+    "test-coverage": "npm run lint && npm run nyc",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "ava": "cross-env NODE_ENV=test ava",
+    "nyc": "cross-env NODE_ENV=test nyc ava"
+  },
+  "peerDependencies": {
+    "@horizin/design-system": "^1.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "idx": "^2.5.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "ava": "latest",
+    "codecov": "latest",
+    "cross-env": "latest",
+    "eslint": "latest",
+    "eslint-config-xo-lass": "latest",
+    "fixpack": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "nodemon": "^1.19.2",
+    "nyc": "latest",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "remark-cli": "latest",
+    "remark-preset-github": "latest",
+    "xo": "latest"
+  },
+  "ava": {
+    "failFast": true,
+    "verbose": true,
+    "helpers": [
+      "test/helpers/**/*"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.md": [
+      "remark . -qfo",
+      "git add"
+    ],
+    "package.json": [
+      "fixpack",
+      "git add"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80,
+    "functions": 80,
+    "branches": 80,
+    "reporter": [
+      "lcov",
+      "html",
+      "text"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-github"
+    ]
+  },
+  "xo": {
+    "prettier": false,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ]
+  }
+}

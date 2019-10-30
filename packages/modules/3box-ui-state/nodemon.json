@@ -1,0 +1,26 @@
+{
+  "name": "3box-state",
+  "homepage": "http://kamescg.io",
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*",
+      "src/*"
+    ],
+    "delay": "2500"
+  },
+  "watch": [
+    "src/",
+    "src/api.js",
+    "src/Component.jsx",
+    "src/Context.js",
+    "src/index.js",
+    "src/Provider.jsx",
+    "src/ProviderClass.jsx",
+    "src/withContext.jsx",
+    "src/withContextPassed.jsx"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json,jsx"
+}

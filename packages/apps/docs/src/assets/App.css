@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  /* transition: all .2s; */
+}
+
+html {
+  height: 100%;
+}
+body {
+  font-family: "Roboto";
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+text-decoration: none;
+cursor: pointer;
+}
+
+a:hover {
+text-decoration: none;
+cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  width: auto;
+}
+
+form {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.overflowHidden {
+  overflow: hidden;
+}
+#portal {
+  position: fixed;
+  z-index: 50;
+}
+#root,
+#root > div {
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  z-index: 50;
+}
+
+.react-tiny-popover-container {
+  z-index: 1000
+}
+
+.alert-enter {
+  opacity: 0;
+  margin: 30px;
+  left: 60px;
+  transform: scale(1);
+}
+.alert-enter-active {
+  opacity: 1;
+  left: 0px !important;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 3000ms, left 300ms;
+}
+.alert-exit {
+  left: 0px;
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9) translateY(9);
+  left: -60px;
+  transition: opacity 300ms, transform 3000ms, left 300ms;
+}
+
+/* ------------ */
+/* Fade In Left     */
+/* ------------ */
+.fadeIn-enter {
+  opacity: 0;
+  transform: scale(1);
+}
+.fadeIn-enter-active {
+  opacity: 1;
+  transition: opacity 300ms, transform 3000ms, right 300ms;
+}
+.fadeIn-exit {
+  opacity: 1;
+}
+.fadeIn-exit-active {
+  opacity: 0;
+  transition: opacity 300ms, transform 3000ms, right 300ms;
+}
+
+/* ------------ */
+/* Fade In Left     */
+/* ------------ */
+.fadeInLeft-enter {
+  opacity: 0;
+  right: -100px !important;
+  transform: scale(1);
+}
+.fadeInLeft-enter-active {
+  opacity: 1;
+  right: 0px !important;
+  transition: opacity 300ms, transform 3000ms, right 300ms;
+}
+.fadeInLeft-exit {
+  opacity: 1;
+  right: 0px !important;
+}
+.fadeInLeft-exit-active {
+  opacity: 0;
+  right: -100px !important;
+  transition: opacity 300ms, transform 3000ms, right 300ms;
+}
+
+.fade {
+  opacity: 0;
+}
+
+.fade-enter  {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 0;
+  transform: translateY(30px);
+  right: 0px;
+}
+
+.fade-enter-done {
+  opacity: 1;
+  transform: translatey(0px);
+  transition: all 250ms ease-in;
+}
+
+.fade-exit  {
+  transform: translateY(30px);
+  z-index: 1;
+}
+
+.fade-enter.fade-exit-active {
+  opacity: .4;
+  transform: scale(0.9) translateY(9);
+  right: 0px;
+  transition: opacity 750ms ease-in;
+}

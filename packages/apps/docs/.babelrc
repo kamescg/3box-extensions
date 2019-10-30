@@ -1,0 +1,16 @@
+{
+  "plugins": [],
+  "presets": [
+    "react-app",
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ]
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "extends": [
+    "react-app",
+    "prettier/react"
+  ],
+  "globals": {
+    "expect": true,
+    "describe": true,
+    "it": true,
+    "fixture": true,
+    "test": true,
+    "jest": true,
+    "document": true,
+    "window": true,
+    "fetch": true,
+    "navigator": true
+  },
+  "rules": {
+    "react/jsx-no-duplicate-props": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "eslint-disable-next-line": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-no-undef": 0,
+    "react/prop-types": 0,
+    "react/jsx-tag-spacing": 0,
+    "no-negated-condition": 0,
+    "no-else-return": 0,
+    "no-undef": 0,
+    "no-unused-expressions": 0,
+    "new-cap": 0,
+    "react/require-default-props": 0,
+    "space-before-function-paren": 0,
+    "quotes": 0,
+    "no-unused-vars": 0,
+    "operator-linebreak": 0,
+  }
+}

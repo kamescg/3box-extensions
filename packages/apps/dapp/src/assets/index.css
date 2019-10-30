@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  box-sizing: border-box;
+  z-index: 10;
+  position: relative;
+  font-family: Ubuntu;
+  font-weight: normal;
+  line-height: 1.5em;
+  width: auto;
+}
+
+h2 {
+  box-sizing: border-box;
+  z-index: 10;
+  position: relative;
+  font-family: Ubuntu;
+  font-weight: normal;
+  line-height: normal;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

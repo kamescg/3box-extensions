@@ -1,0 +1,78 @@
+{
+  "name": "threeid-system",
+  "private": true,
+  "homepage": "https://kamescg.github.io/3id-system",
+  "description": "3ID System",
+  "version": "0.0.1",
+  "author": "Kames <kamescg>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "predeploy": "gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "workspaces": {
+    "nohoist": [
+      "3box",
+      "3box/**",
+      "leveldown",
+      "leveldown/**",
+      "webpack",
+      "webpack/**"
+    ]
+  },
+  "dependencies": {
+    "3box": "1.10.8",
+    "3box-ui-state": "^0.0.1",
+    "3box-ui-system": "^0.0.1",
+    "3box-ui-profiles": "^0.0.1",
+    "3box-ui-profiles-stateless": "^0.0.1",
+    "@horizin/design-system-atoms": "^0.0.1",
+    "@horizin/design-system-molecules": "^0.0.1",
+    "@horizin/design-system-organisms": "^0.0.1",
+    "@horizin/form-generate": "^0.0.1",
+    "@horizin/ui-compose": "^0.0.1",
+    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/react": "^1.5.1",
+    "gatsby": "^2.16.1",
+    "gatsby-image": "^2.2.29",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-manifest": "^2.2.23",
+    "gatsby-plugin-mdx": "^1.0.52",
+    "gatsby-plugin-offline": "^3.0.16",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-sharp": "^2.2.31",
+    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-transformer-sharp": "^2.2.23",
+    "mdx-blocks": "^0.0.15",
+    "node-gyp": "^6.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "react-sweet-progress": "^1.1.2",
+    "styled-components": "^4.4.0"
+  },
+  "devDependencies": {
+    "hash-source": "^1.0.4",
+    "prettier": "^1.18.2",
+    "webpack": "^4.41.2"
+  },
+  "keywords": [
+    "ethereum",
+    "web3"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "react-portal-system",
+  "homepage": "http://horizin.io",
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*",
+      "src/*"
+    ],
+    "delay": "2500"
+  },
+  "watch": [
+    "src/",
+    "src/api.js",
+    "src/Context.js",
+    "src/effects.js",
+    "src/index.js",
+    "src/PortalContext.jsx",
+    "src/Provider.jsx",
+    "src/reducer.js",
+    "src/components/PortalConsumer.jsx",
+    "src/components/PortalConsumerPassed.jsx",
+    "src/components/PortalCreate.jsx",
+    "src/components/PortalInstance.jsx",
+    "src/components/PortalTree.jsx",
+    "src/withContextPassedPositioned.jsx",
+    "src/withContextPassedTypes.jsx"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json, jsx"
+}

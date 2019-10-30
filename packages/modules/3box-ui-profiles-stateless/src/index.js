@@ -1,0 +1,6 @@
+export { default as ProfileAvatar } from './api/ProfileAvatar'
+export { default as ProfileCover } from './api/ProfileCover'
+export { default as ProfileDetails } from './api/ProfileDetails'
+export { default as ProfileIdentity } from './api/ProfileIdentity'
+export { default as ProfileImage } from './api/ProfileImage'
+export { default as ProfileSmall } from './api/ProfileSmall'

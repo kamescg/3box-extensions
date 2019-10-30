@@ -1,0 +1,65 @@
+{
+  "name": "@horizin/design-system-organisms",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "main:src": "src/index.js",
+  "scripts": {
+    "build": "cross-env BABEL_ENV=production babel src --out-dir dist",
+    "bundle": "webpack --config ./config/webpack.config.js",
+    "watch": "nodemon --ignore dist/ --exec cross-env BABEL_ENV=production babel src --out-dir dist",
+    "test": "react-scripts test",
+    "lint": "eslint ./src/**/*.js --max-warnings=0 --format=codeframe"
+  },
+  "peerDependencies": {
+    "@emotion/core": "^10.0.21",
+    "@mdx-js/react": "^1.5.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.6.3",
+    "@emotion/core": "^10.0.21",
+    "@mdx-js/react": "^1.5.1",
+    "babel-loader": "^8.0.6",
+    "cross-env": "5.0.5",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "idx": "^2.5.6",
+    "react-hooks-paginator": "^0.4.0",
+    "theme-ui": "^0.2.44"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/setupTests.{js,jsx}",
+      "!src/serviceWorker.{js,jsx}",
+      "!src/**/*.(spec|test|stories).{js,jsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 98,
+        "branches": 98,
+        "functions": 98,
+        "lines": 98
+      }
+    }
+  },
+  "license": "MIT"
+}

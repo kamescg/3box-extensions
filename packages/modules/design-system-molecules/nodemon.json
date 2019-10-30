@@ -1,0 +1,52 @@
+{
+  "name": "@horizin/design-system",
+  "homepage": "http://horizin.io",
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*"
+    ],
+    "delay": "2500"
+  },
+  "watch": [
+    "src/",
+    "src/atoms/Absolute",
+    "src/atoms/BackgroundGradient",
+    "src/atoms/BackgroundImage",
+    "src/atoms/Blockquote",
+    "src/atoms/Box",
+    "src/atoms/Branch",
+    "src/atoms/Button",
+    "src/atoms/Container",
+    "src/atoms/Flex",
+    "src/atoms/Heading",
+    "src/atoms/HorizontalRule",
+    "src/atoms/Image",
+    "src/atoms/Input",
+    "src/atoms/Paragraph",
+    "src/atoms/Responsive",
+    "src/atoms/Span",
+    "src/atoms/Text",
+    "src/molecules/Card",
+    "src/molecules/Field",
+    "src/molecules/Form",
+    "src/molecules/Label",
+    "src/molecules/Markdown",
+    "src/molecules/Modal",
+    "src/molecules/Panel",
+    "src/molecules/Paper/index",
+    "src/molecules/Paper/styled",
+    "src/molecules/Portal",
+    "src/molecules/Popover",
+    "src/molecules/Smartphone",
+    "src/molecules/Toast",
+    "src/molecules/Toast",
+    "src/organisms/Menu",
+    "src/organisms/Portal",
+    "src/organisms/Tabs",
+    "src/organisms/TabsPhone"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json,jsx"
+}

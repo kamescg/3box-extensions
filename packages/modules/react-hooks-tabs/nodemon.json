@@ -1,0 +1,28 @@
+{
+  "name": "nodemon",
+  "homepage": "http://nodemon.io",
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*",
+      "src/*"
+    ],
+    "delay": "2500"
+  },
+  "watch": [
+    "src/Component.js",
+    "src/Context.js",
+    "src/index.js",
+    "src/Provider.jsx",
+    "src/withContext.js",
+    "src/withContextPassed.js",
+    "src/components/Tab.jsx",
+    "src/components/TabList.jsx",
+    "src/components/TabPanel.jsx",
+    "src/components/TabPanelWrapper.jsx",
+    "src/components/TabsDesignSystem.jsx"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json"
+}

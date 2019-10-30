@@ -1,0 +1,138 @@
+{
+  "name": "3box-ui-profiles",
+  "description": "3Box Profile Interface System",
+  "version": "0.0.1",
+  "author": "Kames <info@kamescg.com> (https://www.kamescg.com)",
+  "homepage": "https://github.com/kamescg/3box-ui-profiles",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "main:src": "src/index.js",
+  "keywords": [
+    "3box",
+    "identity",
+    "decentralized identity",
+    "ethereum",
+    "blockchain"
+  ],
+  "bugs": {
+    "url": "https://github.com/kamescg/3box-ui-profiles/issues",
+    "email": "info@kamescg.com"
+  },
+  "contributors": [
+    "Kames <info@kamescg.com> (https://www.kamescg.com)"
+  ],
+  "engines": {
+    "node": ">=8.3"
+  },
+  "scripts": {
+    "build": "cross-env BABEL_ENV=production babel src --out-dir dist",
+    "bundle": "webpack --config ./config/webpack.config.js",
+    "watch": "nodemon --exec cross-env BABEL_ENV=production babel src --out-dir dist",
+    "test": "npm run lint && npm run ava",
+    "test-coverage": "npm run lint && npm run nyc",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "lint": "xo && remark . -qfo",
+    "ava": "cross-env NODE_ENV=test ava",
+    "nyc": "cross-env NODE_ENV=test nyc ava"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "3box": "^1.10.10",
+    "3box-ui-state": "^0.0.1",
+    "3box-ui-system": "0.0.1",
+    "@horizin/design-system-atoms": "^0.0.1",
+    "@horizin/design-system-molecules": "^0.0.1",
+    "@horizin/design-system-organisms": "^0.0.1",
+    "@horizin/ui-compose": "^0.0.1",
+    "idx": "^2.5.6",
+    "react-hook-form": "^3.23.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "ava": "latest",
+    "codecov": "latest",
+    "cross-env": "latest",
+    "eslint": "latest",
+    "eslint-config-xo-lass": "latest",
+    "fixpack": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "nodemon": "^1.19.2",
+    "nyc": "latest",
+    "remark-cli": "latest",
+    "remark-preset-github": "latest",
+    "xo": "latest"
+  },
+  "ava": {
+    "failFast": true,
+    "verbose": true,
+    "helpers": [
+      "test/helpers/**/*"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.md": [
+      "remark . -qfo",
+      "git add"
+    ],
+    "package.json": [
+      "fixpack",
+      "git add"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80,
+    "functions": 80,
+    "branches": 80,
+    "reporter": [
+      "lcov",
+      "html",
+      "text"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamescg/3box-ui-profiles"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ]
+  }
+}

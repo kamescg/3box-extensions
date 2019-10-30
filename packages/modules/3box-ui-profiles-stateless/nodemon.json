@@ -1,0 +1,24 @@
+{
+  "name": "@kames/3box-profiles-components",
+  "homepage": "http://kamescg.io",
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*"
+    ],
+    "delay": "500"
+  },
+  "watch": [
+    "src/",
+    "src/api/Avatar",
+    "src/api/Login",
+    "src/api/LoginButton",
+    "src/api/LoginModal",
+    "src/api/ProfileImage",
+    "src/api/ProfileSmall",
+    "src/utilities"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js, json, jsx"
+}

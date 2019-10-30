@@ -1,0 +1,129 @@
+{
+  "name": "ethers-react-system",
+  "description": "Ethers Interface & Effects Management System",
+  "version": "0.0.1",
+  "author": "Kames <info@kamescg.com> (https://www.kamescg.com)",
+  "homepage": "https://github.com/kamescg/ethers-react-system",
+  "main": "dist/index.js",
+  "main:src": "src/index.js",
+  "keywords": [
+    "ethers-react-system"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env BABEL_ENV=production babel src --out-dir dist",
+    "bundle": "webpack --config ./config/webpack.config.js",
+    "watch": "nodemon --ignore ./dist --exec cross-env BABEL_ENV=production babel src --out-dir dist",
+    "test": "npm run lint && npm run ava",
+    "test-coverage": "npm run lint && npm run nyc",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "ava": "cross-env NODE_ENV=test ava",
+    "nyc": "cross-env NODE_ENV=test nyc ava"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "ethers": "^4.0.37",
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "ava": "latest",
+    "codecov": "latest",
+    "cross-env": "latest",
+    "eslint": "latest",
+    "eslint-config-xo-lass": "latest",
+    "fixpack": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "nodemon": "^1.19.2",
+    "nyc": "latest",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "remark-cli": "latest",
+    "remark-preset-github": "latest",
+    "xo": "latest"
+  },
+  "engines": {
+    "node": ">=8.3"
+  },
+  "bugs": {
+    "url": "https://github.com/kamescg/ethers-react-system/issues",
+    "email": "info@kamescg.com"
+  },
+  "contributors": [
+    "Kames <info@kamescg.com> (https://www.kamescg.com)"
+  ],
+  "ava": {
+    "failFast": true,
+    "verbose": true,
+    "helpers": [
+      "test/helpers/**/*"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.md": [
+      "remark . -qfo",
+      "git add"
+    ],
+    "package.json": [
+      "fixpack",
+      "git add"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80,
+    "functions": 80,
+    "branches": 80,
+    "reporter": [
+      "lcov",
+      "html",
+      "text"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamescg/ethers-react-system"
+  },
+  "xo": {
+    "prettier": false,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ]
+  }
+}

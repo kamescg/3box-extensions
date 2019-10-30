@@ -1,0 +1,25 @@
+{
+  "name": "3box-system",
+  "homepage": "http://kamescg.io",
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*"
+    ],
+    "delay": "500"
+  },
+  "watch": [
+    "src/",
+    "src/api/Auth",
+    "src/api/Messaging",
+    "src/api/Profiles",
+    "src/api/Storage",
+    "src/components/BoxAccess",
+    "src/helpers/Component",
+    "src/helpers/Reference",
+    "src/utilities"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json, jsx"
+}
