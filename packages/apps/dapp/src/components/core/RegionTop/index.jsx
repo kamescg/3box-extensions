@@ -9,11 +9,12 @@ import { Login } from '3box-ui-system'
 
 const RegionTop = props => {
   return (
-    <Atom.Flex alignCenter between sx={{variant: 'layout.header'}}>
+    <Atom.Flex alignCenter between sx={{ variant: 'layout.header' }}>
       {/* Left */}
       <Atom.Flex alignCenter>
         <Link to='/'>
           <Atom.Heading sm heavy mb={0}>{GLOBAL.siteName}</Atom.Heading>
+          <Atom.Heading xxs normal>Community Initiative</Atom.Heading>
         </Link>
 
         {/* Menu */}
@@ -28,38 +29,23 @@ const RegionTop = props => {
                 to: '/setup'
               },
               {
-                label: 'Plugins',
-                to: '/plugins'
+                label: 'UI State',
+                to: '/3box-ui-state'
               },
               {
-                label: 'Docs',
-                to: '/docs'
+                label: 'UI System',
+                to: '/3box-ui-system'
               },
               {
-                label: 'Guides',
-                to: '/guides'
-              },
+                label: 'UI Render',
+                to: '/3box-ui-system-render'
+              }
             ]}
           />
         </Atom.Flex>
         {/* Right */}
       </Atom.Flex>
       <Atom.Flex alignCenter>
-        <Molecule.Menu
-          styled={{
-            m: 2
-          }}
-          items={[
-            {
-              label: 'Account',
-              to: '/account'
-            },
-            {
-              label: 'Profile',
-              to: '/profile'
-            },
-          ]}
-        />
         <Login />
       </Atom.Flex>
     </Atom.Flex>

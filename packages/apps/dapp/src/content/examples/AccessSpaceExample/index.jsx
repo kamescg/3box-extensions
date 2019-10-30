@@ -24,7 +24,7 @@ const AccessSpaceExample = props => {
               <pre>
                 {
 `import React from 'react'
-import { AccessSpace } from '3ID-system'
+import { AccessSpace } from '3box-ui-system'
 export default props =>
 <AccessSpace space='web3'>
   <div>

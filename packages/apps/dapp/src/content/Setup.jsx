@@ -3,28 +3,7 @@ import { Site } from 'templates'
 
 const showcase = {
   title: 'Get Setup.',
-  tagline: 'Installing 3Box UI System and Plugin Libraries.',
-}
-
-/* --- Content --- */
-const featureOne = {
-  title: 'Authentication',
-  tagline: 'Connect to Etheruem',
-  summary: 'Proin commodo venenatis felis mollis porta. Phasellus pretium elit et neque gravida, eget malesuada dui placerat. Proin quis luctus libero.',
-  image: 'https://image.flaticon.com/icons/svg/1673/1673590.svg',
-
-}
-const featureTwo = {
-  title: 'Storage',
-  tagline: 'Store Data in the Cloud',
-  summary: 'Proin commodo venenatis felis mollis porta. Phasellus pretium elit et neque gravida, eget malesuada dui placerat. Proin quis luctus libero.',
-  image: 'https://image.flaticon.com/icons/svg/1673/1673612.svg',
-}
-const featureThree = {
-  title: 'Communication',
-  tagline: 'Chat with The World',
-  summary: 'Proin commodo venenatis felis mollis porta. Phasellus pretium elit et neque gravida, eget malesuada dui placerat. Proin quis luctus libero.',
-  image: 'https://image.flaticon.com/icons/svg/1673/1673579.svg',
+  tagline: 'Installing 3Box Dev and Contributing.',
 }
 
 /* --- Component --- */
@@ -49,39 +28,29 @@ const Home = props =>
       image={null}
     />
 
-
-    <Install3Box />
-    <Install3BoxUISystem />
-    <Atom.Heading xxl heavy>Plugin Systems</Atom.Heading>
-    <Atom.Paragraph>
-      Extend 3Box UI System with unique Plugin Systems
-    </Atom.Paragraph>
-    <PluginCMS />
-    <PluginProfiles />
-    <PluginChatroom />
-
+    <Install3BoxExtensions />
   </Site>
 
 export default Home
 
-
-const Install3Box = props => {
+const Install3BoxExtensions = props => {
   return (
     <Atom.Container my={3}>
       <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>Install 3Box</Atom.Heading>
+          <Atom.Heading md heavy m={0}>3Box Dev</Atom.Heading>
           <Atom.Paragraph m={0}>
-            Include 3Box as project dependency.
-      </Atom.Paragraph>
+            Project currently under rapid development.
+          </Atom.Paragraph>
+          <Atom.Paragraph>
+            Packages will be released on NPM when ready for production.
+          </Atom.Paragraph>
         </Atom.Flex>
         <Atom.Flex flex={3}>
           <Atom.Box gradient='gray' sx={{ borderRadius: 7, boxShadow: 1, p: 3, px: 4, width: '100%' }}>
             <code>
               <pre>
-                {
-                  `$ npm install 3box
-$ yarn add 3box`}
+                {`$ git clone git@github.com:KamesCG/3box-extensions.git`}
               </pre>
             </code>
           </Atom.Box>
@@ -90,109 +59,3 @@ $ yarn add 3box`}
     </Atom.Container>
   )
 }
-
-const Install3BoxUISystem = props => {
-  return (
-    <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
-        <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box UI System</Atom.Heading>
-          <Atom.Paragraph m={0}>
-            Easyil add 3Box to any React Application
-      </Atom.Paragraph>
-        </Atom.Flex>
-        <Atom.Flex flex={3}>
-          <Atom.Box gradient='gray' sx={{ borderRadius: 7, boxShadow: 1, p: 3, px: 4, width: '100%' }}>
-            <code>
-              <pre>
-                {
-`$ npm install 3id-system
-$ yarn add 3id-system`}
-              </pre>
-            </code>
-          </Atom.Box>
-        </Atom.Flex>
-      </Atom.Flex>
-    </Atom.Container>
-  )
-}
-
-const PluginCMS = props => {
-  return (
-    <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
-        <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box UI System CMS</Atom.Heading>
-          <Atom.Paragraph m={0}>
-            Add a lightweight, loosely typed content management sytem to any decentralized identity.
-      </Atom.Paragraph>
-        </Atom.Flex>
-        <Atom.Flex flex={3}>
-          <Atom.Box gradient='gray' sx={{ borderRadius: 7, boxShadow: 1, p: 3, px: 4, width: '100%' }}>
-            <code>
-              <pre>
-                {
-`$ npm install 3id-system-cms
-$ yarn add 3id-system-cms`}
-              </pre>
-            </code>
-          </Atom.Box>
-        </Atom.Flex>
-      </Atom.Flex>
-    </Atom.Container>
-  )
-}
-
-const PluginProfiles = props => {
-  return (
-    <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
-        <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box UI System Profiles</Atom.Heading>
-          <Atom.Paragraph m={0}>
-            Add 3Box UI System Profile components to any application.
-      </Atom.Paragraph>
-        </Atom.Flex>
-        <Atom.Flex flex={3}>
-          <Atom.Box gradient='gray' sx={{ borderRadius: 7, boxShadow: 1, p: 3, px: 4, width: '100%' }}>
-            <code>
-              <pre>
-                {
-`$ npm install 3id-system-profiles
-$ yarn add 3id-system-profiles`}
-              </pre>
-            </code>
-          </Atom.Box>
-        </Atom.Flex>
-      </Atom.Flex>
-    </Atom.Container>
-  )
-}
-
-
-const PluginChatroom = props => {
-  return (
-    <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
-        <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box UI System Chatroom</Atom.Heading>
-          <Atom.Paragraph m={0}>
-            Add 3Box UI System Chatrooms (powered by Ghost Threads) to any React application.
-      </Atom.Paragraph>
-        </Atom.Flex>
-        <Atom.Flex flex={3}>
-          <Atom.Box gradient='gray' sx={{ borderRadius: 7, boxShadow: 1, p: 3, px: 4, width: '100%' }}>
-            <code>
-              <pre>
-                {
-`$ npm install 3id-system-profiles
-$ yarn add 3id-system-profiles`}
-              </pre>
-            </code>
-          </Atom.Box>
-        </Atom.Flex>
-      </Atom.Flex>
-    </Atom.Container>
-  )
-}
-

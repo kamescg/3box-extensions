@@ -1,49 +1,24 @@
 
 import { Site } from 'templates'
-
 import {
-  AccessProfileExample, 
+  AccessProfileExample,
   AccessSpaceExample,
   AccessThreadExample,
   AddLoginExample,
   EnableEthereumExample,
   InitProviderExample,
-  ReferenceExample,
   SpaceOpenExample,
   StorageDeleteExample,
   StorageMergeExample,
   StorageProfileSetExample,
-  StorageRenderExample,
   ThreadJoinExample,
   ThreadPostDeleteExample,
   ThreadPostPublishExample
- } from 'content/examples'
+} from 'content/examples'
 
- const showcase = {
-  title: 'Web3 Identity. Made Easy.',
-  tagline: 'Authentication, Storage and Messaging on easy mode with 3Box UI System.',
-}
-
-/* --- Content --- */
-const featureOne = {
-  title: 'Authentication',
-  tagline: 'Connect to Etheruem',
-  summary: 'Support social identity and basic reputation.',
-  image: 'https://3box.io/static/media/Profiles.53b79a55.svg',
-
-}
-const featureTwo = {
-  title: 'Storage',
-  tagline: 'Store Data in the Decentralized Cloud',
-  summary: 'Store user data in a private database just for your app.',
-  image: 'https://3box.io/static/media/Storage.3c2f0d4f.svg',
-}
-const featureThree = {
-  title: 'Communication',
-  tagline: 'Connect with The World Around You',
-  summary: 'Add decentralized chat, messaging, and commenting.',
-  image: 'https://3box.io/static/media/Messaging.63339734.svg',
-  
+const showcase = {
+  title: 'Web3 Identity Made Easy',
+  tagline: 'Compose Authentication, Storage and Messaging features together via 3Box Dev.',
 }
 
 /* --- Component --- */
@@ -68,32 +43,57 @@ const Home = props =>
       {...showcase}
       image={null}
     />
+    <Atom.Span variants={['tag']} effects={['white']}>Rapidly build social decentralized applications.</Atom.Span>
 
-    {/* Features */}
-    {/* <Atom.Container my={5}>
-      <Atom.Flex sx={{}}>
-        <Molecule.Card
-          {...featureOne}
-          sx={{ flex: 1, p: 3 }}
-          sxImage={{ maxWidth: 55, p: 2, pr: 3 }}
-        />
+    <Atom.Container maxWidth={980} sx={{ my: 5 }}>
+      <ModuleFeatured
+        url='/3box-ui-system-render'
+        title='3Box UI State'
+        content='The 3Box UI State library utilizes the latest updates in React: Context, Hooks and Effects. Providing a lighweight state management layer to handle core 3Box interactions. Easily request data and listen to global state from any application.'
+        image='https://image.flaticon.com/icons/svg/390/390566.svg'
+        sx={{
+          my: 3
+        }}
+      />
+      <ModuleFeatured
+        url='/3box-ui-system'
+        title='3Box UI System'
+        content='The 3Box UI State library helps frontend developers easily start integrating core 3Box decentralized identity features: authentication, storage and messaging. Start adding login buttons, access control, storaging merging, thread listening, and more in just a couple of minutes'
+        image='https://image.flaticon.com/icons/svg/180/180100.svg'
+        sx={{
+          my: 3
+        }}
+      />
+      <ModuleFeatured
+        title='3Box UI System Render'
+        content='The 3Box UI State library helps developers predictably fetch data from 3Box profiles, spaces and threads and pass that data into render components. Easily render lists, items and mutate data structures without worrying about minor React render details (element, component, factory, etc...). '
+        image='https://image.flaticon.com/icons/svg/904/904905.svg'
+        url='/3box-ui-system-render'
+        sx={{
+          my: 3
+        }}
+      />
+      <ModuleFeatured
+        title='3Box UI Profiles'
+        url='/3box-ui-profiles'
+        content='Coming Soon.'
+        image='https://image.flaticon.com/icons/svg/1673/1673472.svg'
+        sx={{
+          my: 3
+        }}
+      />
+      <ModuleFeatured
+        title='3Box Content Management System'
+        url='/3box-cms'
+        content='Coming Soon.'
+        image='https://image.flaticon.com/icons/svg/1673/1673472.svg'
+        sx={{
+          my: 3
+        }}
+      />
+    </Atom.Container>
 
-        <Molecule.Card
-          {...featureTwo}
-          sx={{ flex: 1, p: 3 }}
-          sxImage={{ maxWidth: 55, p: 2, pr: 3 }}
-        />
-
-        <Molecule.Card
-          {...featureThree}
-          sx={{ flex: 1, p: 3 }}
-          sxImage={{ maxWidth: 55, p: 2, pr: 3 }}
-        />
-      </Atom.Flex>
-    </Atom.Container> */}
-
-    <Atom.Span variants={['tag']} effects={['white']}>A community initiative to help enable adpotion of 3Box.</Atom.Span>
-
+    <Atom.Container>
     <InitProviderExample />
     <EnableEthereumExample />
 
@@ -117,7 +117,7 @@ const Home = props =>
     <Atom.Paragraph>
       Manage data controlled by a 3Box decentralized identity.
     </Atom.Paragraph>
-    <StorageProfileSetExample/>
+    <StorageProfileSetExample />
     <StorageMergeExample />
     <StorageDeleteExample />
 
@@ -127,16 +127,33 @@ const Home = props =>
     </Atom.Paragraph>
     <ThreadPostPublishExample />
     <ThreadPostDeleteExample />
+    </Atom.Container>
 
-    {/* <Atom.Heading xxl heavy>Rendering</Atom.Heading>
-    <Atom.Paragraph>
-      Simplified Data Rendering and Content References
-    </Atom.Paragraph>
-    <StorageRenderExample />
-    <ReferenceExample /> */}
+
   </Site>
 
 export default Home
+
+
+const ModuleFeatured = props => {
+
+  return (
+    <Atom.Flex variants={['card']} sx={props.sx} >
+      <Atom.Flex center column sx={{ flex: 2 }} >
+        <Atom.Image src={props.image} sx={{ maxWidth: 80 }} />
+      </Atom.Flex>
+      <Atom.Flex column sx={{ flex: 6 }} >
+        <Atom.Heading xl heavy>{props.title}</Atom.Heading>
+        <Atom.Paragraph>
+          {props.content}
+        </Atom.Paragraph>
+        <Molecule.Link to={props.url}>
+          <Atom.Button>Learn More</Atom.Button>
+        </Molecule.Link>
+      </Atom.Flex>
+    </Atom.Flex>
+  )
+}
 
 
 

@@ -6,7 +6,7 @@ const Home = props =>
   <Site sx={{ bg: 'smoke' }} sxMain={{ alignItems: 'center', justifyContent: 'center' }}>
     <Atom.Heading xxl heavy>Plugin Systems</Atom.Heading>
     <Atom.Paragraph>
-      Extend 3Box UI System with unique Plugin Systems
+      Extend 3Box Dev with unique Plugin Systems
     </Atom.Paragraph>
     <PluginCMS />
     <PluginProfiles />
@@ -20,7 +20,7 @@ const PluginCMS = props => {
     <Atom.Container my={3}>
       <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box UI System CMS</Atom.Heading>
+          <Atom.Heading md heavy m={0}>3Box Dev CMS</Atom.Heading>
           <Atom.Paragraph m={0}>
             Add a lightweight, loosely typed content management sytem to any decentralized identity.
       </Atom.Paragraph>
@@ -46,9 +46,9 @@ const PluginProfiles = props => {
     <Atom.Container my={3}>
       <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box UI System Profiles</Atom.Heading>
+          <Atom.Heading md heavy m={0}>3Box Dev Profiles</Atom.Heading>
           <Atom.Paragraph m={0}>
-            Add 3Box UI System Profile components to any application.
+            Add 3Box Dev Profile components to any application.
       </Atom.Paragraph>
         </Atom.Flex>
         <Atom.Flex flex={3}>
@@ -73,9 +73,9 @@ const PluginChatroom = props => {
     <Atom.Container my={3}>
       <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box UI System Chatroom</Atom.Heading>
+          <Atom.Heading md heavy m={0}>3Box Dev Chatroom</Atom.Heading>
           <Atom.Paragraph m={0}>
-            Add 3Box UI System Chatrooms (powered by Ghost Threads) to any React application.
+            Add 3Box Dev Chatrooms (powered by Ghost Threads) to any React application.
       </Atom.Paragraph>
         </Atom.Flex>
         <Atom.Flex flex={3}>

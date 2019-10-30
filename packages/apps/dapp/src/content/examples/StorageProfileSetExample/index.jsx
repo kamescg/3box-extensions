@@ -55,7 +55,7 @@ const StorageProfileSetExample = props => {
               <pre>
                 {`
 import React from 'react'
-import { StorageSet } from '3ID-system'
+import { StorageSet } from '3box-ui-system'
 import { FormStorageSet } from '3ID-system-helpers'
 const StorageSetForm = props => { 
   const [ values, setValues ] = useState()

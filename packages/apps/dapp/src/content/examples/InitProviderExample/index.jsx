@@ -19,7 +19,7 @@ const InitProviderExample = props => {
               <pre>
                 {
 `import React from 'react'
-import { BoxProvider } from '3ID-system'
+import { BoxProvider } from '3box-ui-system'
 export default props =>
 <BoxProvider>
   {props.children}

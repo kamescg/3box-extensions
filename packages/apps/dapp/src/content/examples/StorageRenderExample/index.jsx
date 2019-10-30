@@ -18,7 +18,7 @@ const StorageRenderExample = props => {
               <pre>
                 {`
 import React from 'react'
-import { StorageRender } from '3ID-system'
+import { StorageRender } from '3box-ui-system'
 export default props => (
   <StorageRender
     space='web3'

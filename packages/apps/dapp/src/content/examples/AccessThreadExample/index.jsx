@@ -25,7 +25,7 @@ const AccessThreadExample = props => {
               <pre>
                 {`
  import React from 'react'
- import { AccessThread } from '3ID-system'
+ import { AccessThread } from '3box-ui-system'
  export default props =>
  <AccessThread space='web3' threadName='home'>
     <div>

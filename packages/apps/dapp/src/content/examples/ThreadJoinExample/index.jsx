@@ -20,7 +20,7 @@ const ThreadJoinExample = props => {
               <pre>
                 {`
 import React from 'react'
-import { Login } from '3ID-system'
+import { Login } from '3box-ui-system'
 export default props => (
   <ThreadJoin
     space='3box'

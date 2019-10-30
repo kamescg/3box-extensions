@@ -21,7 +21,7 @@ const ReferenceExample = props => {
               <pre>
                 {`
  import React from 'react'
- import { Reference } from '3ID-system'
+ import { Reference } from '3box-ui-system'
  export default ({ reference }) => (
    <Reference
     address={reference.address}

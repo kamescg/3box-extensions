@@ -23,7 +23,7 @@ import {
   Login,
   LoginButton,
   LoginModal,
-} from '3ID-system'
+} from '3box-ui-system'
 export default props => (
   <Login variants={['tag']} />
   <LoginButton 

@@ -22,7 +22,7 @@ const AccessProfileExample = props => {
               <pre>
                 {`
  import React from 'react'
- import { AccessAuthentication } from '3ID-system'
+ import { AccessAuthentication } from '3box-ui-system'
  export default props =>
  <AccessAuthentication>
     <div>

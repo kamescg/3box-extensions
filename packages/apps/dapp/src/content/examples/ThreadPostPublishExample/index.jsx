@@ -69,7 +69,7 @@ const ThreadPostPublishExample = props => {
             <pre>
               {`
 import React from 'react'
-import { ThreadPostDelete } from '3ID-system'
+import { ThreadPostDelete } from '3box-ui-system'
 export default props => (
 <ThreadPostPublish
   threadName='commentThread'

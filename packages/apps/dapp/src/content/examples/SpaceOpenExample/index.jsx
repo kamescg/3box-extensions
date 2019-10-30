@@ -19,7 +19,7 @@ const SpaceOpenExample = props => {
               <pre>
                 {`
 import React from 'react'
-import { SpaceOpen } from '3ID-system'
+import { SpaceOpen } from '3box-ui-system'
 export default props => <SpaceOpen space='3box' />
 `}
               </pre>

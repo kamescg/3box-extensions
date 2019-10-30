@@ -56,7 +56,7 @@ const StorageRemoveExample = props => {
               <pre>
                 {`
 import React from 'react'
-import { StorageSet } from '3ID-system'
+import { StorageSet } from '3box-ui-system'
 import { FormStorageRemove } from '3ID-system-helpers'
 const StorageRemoveForm = props => { 
   const [ values, setValues ] = useState()

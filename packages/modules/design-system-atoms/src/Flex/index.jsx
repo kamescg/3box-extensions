@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { useFlexEffect } from '../effects'
+import { useFlexEffect, useBoxBaseStyleEffect } from '../effects'
 
 export default ({ as, sx, children, ...props }) => {
+  const box = useBoxBaseStyleEffect(props)
   const flexed = useFlexEffect(props)
 
   return (
@@ -12,6 +13,7 @@ export default ({ as, sx, children, ...props }) => {
         flexDirection: ['column', 'row'],
         position: 'relative',
         zIndex: 10,
+        ...box,
         ...flexed,
         ...sx,
         ...props

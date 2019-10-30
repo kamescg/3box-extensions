@@ -38,21 +38,7 @@ const Footer = props => {
       {/* Right */}
 
       <Atom.Flex alignCenter>
-        <Molecule.Menu
-          styled={{
-            mx: 1
-          }}
-          items={[
-            {
-              label: 'CMS',
-              to: '/cms'
-            },
-            {
-              label: 'Dashboard',
-              to: '/dashboard'
-            },
-          ]}
-        />
+          <Atom.Span xxs>Built by KamesCG at ConsenSys</Atom.Span>
       </Atom.Flex>
     </Atom.Flex>
   )

@@ -20,7 +20,7 @@ const EnableEthereumExample = props => {
               <pre>
                 {
                   `import React from 'react'
-import { EnableEtheruem } from '3ID-system'
+import { EnableEtheruem } from '3box-ui-system'
 export default props =>(
   <EnableEtheruem
     componentIsDisconnected={CustomComponent}
