@@ -1,38 +1,39 @@
-# 3Box System
+# 3Box Extensions
+The 3Box Extensions module is an experiment to push the boundaries of 3Box in the Interface.
 
-[![build status](https://img.shields.io/travis/com/KamesCG/3box-system.svg)](https://travis-ci.com/KamesCG/3box-system)
-[![code coverage](https://img.shields.io/codecov/c/github/KamesCG/3box-system.svg)](https://codecov.io/gh/KamesCG/3box-system)
-[![code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![made with lass](https://img.shields.io/badge/made_with-lass-95CC28.svg)](https://lass.js.org)
-[![license](https://img.shields.io/github/license/KamesCG/3box-system.svg)](LICENSE)
-[![npm downloads](https://img.shields.io/npm/dt/3box-system.svg)](https://npm.im/3box-system)
+Simplifying the steps required to add decentralized authentication, storage and messaging. The 3Box Extensions repo is split into a monorepo to simplify module development and experimentation. The primary modules to get started are the `3box-ui-state` and `3box-ui-system` package, simplifying initializing a state provider and a components to interface between user interaction and the underlying `3box.js` methods.
 
-## Table of Contents
+## Resources
+Before getting started with this repo, please reference the 3Box documentation and libraries.
+- https://docs.3box.io/
+- https://www.npmjs.com/package/3box
 
-* [Overview](#overview)
-* [Install](#install)
-* [Usage](#usage)
-* [Examples](#examples)
-* [Contributors](#contributors)
-* [License](#license)
+## Major Packages
+- 3Box UI State (3box-ui-state)
+- 3Box UI System (3box-ui-system)
+- 3Box UI System Render (3box-ui-system-render)
+- 3Box UI Profiles (3box-ui-profiles)
+- 3Box UI Profiles Stateless (3box-ui-profiles-stateless)
 
-```
-npm install @kames/3box-system
-```
+## Developer Setup
 
-Tame the decentralized web.
+Install: `yarn`
 
-The 3Box System library wraps the 3Box `3box` javascript module with a React component and effect handling system. 
+Watch: `yarn watch`
 
-- Read and Write to Profiles/Spaces (Storage)
-- Post and Delete to Threads (Messages)
-- Render Conditionals (e.x. Require Open Space before Form Render)
-- State Management (Opening/Loading) 
-- Global State Management (React Context)
+Run: `cd packages/apps/dapp ; yarn start`
 
+More developer documentation coming soon.
 
-## Examples
+## Development Planning
+- [x] Create MVC (Minimal Viable Code)
+- [ ] Test Current Approach
+- [ ] Calibrate Approach
+- [ ] Add Complete UI System
+- [ ] Add Plugin System
+
+## 3Box UI System Examples
+Below is small sample of components to help enable rapid development.
 
 
 ### Login
@@ -60,9 +61,7 @@ const Component = props => {
 import { AccessSpace } from '@kames/3box-system'
 const Component = props => { 
  return(
-  <AccessSpace
-    space='ETH'
-  >
+  <AccessSpace space='web3'>
     <MyFormComponent />
   </AccessThread>
 )}
@@ -74,11 +73,10 @@ import { AccessThread } from '@kames/3box-system'
 const Component = props => { 
  return(
   <AccessThread
-    space='ETH'
+    space='web3'
     thread='comments'
     threadOptions={
       members: true,
-      firstModerator: '0x...'
     }
   >
     <MyFormComponent />
@@ -91,7 +89,7 @@ const Component = props => {
 import { MessagePost } from '@kames/3box-system'
 const Component = props => { 
  return(
-   <MessagePost threadName={'ETH'}>
+   <MessagePost threadName='comments'>
     <span>delete thread message</span>
   </MessagePost>
 )}
@@ -102,8 +100,8 @@ const Component = props => {
 import { MessageDelete } from '@kames/3box-system'
 const Component = props => { 
  return(
-   <MessageDelete threadName={'ETH'} postId={'123456689'}>
-    <span>delete thread message</span>
+   <MessageDelete threadName='comments' postId='123456689'>
+    <span>Delete Message</span>
   </MessageDelete>
 )}
 ```
@@ -113,90 +111,8 @@ const Component = props => {
 import { ThreadJoin } from '@kames/3box-system'
 const Component = props => { 
  return(
-   <ThreadJoin space='ETH' threadName='comments'  >
-    <span>delete thread message</span>
+   <ThreadJoin space='web3' threadName='comments'  >
+    <span>Join Thread</span>
   </ThreadJoin>
 )}
 ```
-
-
-* Account: Login and Logout
-* Data: Get, Set and Delete
-* Space: Open and Close
-* Thread: Join and Unsubscribe
-
-## Example
-```js
-import {
-  BoxLoginButton, BoxThreadList, BoxQuestPostCreate
-} from '@kames/3box-system'
-```
-
-### Component List
-
-* BoxLoginButton
-* BoxLoginProfile
-* BoxMemberAdd
-* BoxModeratorAdd
-* BoxOpenSpace
-* BoxProfile
-* BoxSpaceCreate
-* BoxSpaceList
-* BoxSpaceManage
-* BoxThreadComment
-* BoxThreadCreate
-* BoxThreadJoin
-* BoxThreadList
-* BoxThreadManage
-* BoxThreadManageDetails
-* BoxThreadManagePeople
-* BoxThreadPost
-* BoxThreadPostCreate
-* BoxThreadPostDelete
-* BoxThreadPostList
-* BoxThreadPostRetrieve
-
-## Install
-
-[npm][]:
-
-```sh
-npm install 3box-system
-```
-
-[yarn][]:
-
-```sh
-yarn add 3box-system
-```
-
-
-## Usage
-
-```js
-const ModuleBoilerplate = require('3box-system');
-
-const moduleBoilerplate = new ModuleBoilerplate();
-
-console.log(moduleBoilerplate.renderName());
-// script
-```
-
-
-## Contributors
-
-| Name      | Website                   |
-| --------- | ------------------------- |
-| **Kames** | <https://www.kamescg.com> |
-
-
-## License
-
-[MIT](LICENSE) © [Kames](https://www.kamescg.com)
-
-
-## 
-
-[npm]: https://www.npmjs.com/
-
-[yarn]: https://yarnpkg.com/
