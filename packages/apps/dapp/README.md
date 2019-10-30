@@ -1,5 +1,5 @@
 # 3Box Dev
-The 3Box Dev module is an experiment to push the boundaries of 3Box in the Interface.
+The 3Box Dev module is an experiment to understand the limits of 3Box in an a modern React environment.
 
 Simplifying the steps required to add decentralized authentication, storage and messaging. The 3Box Dev repo is split into a monorepo to simplify module development and experimentation. The primary modules to get started are the `3box-ui-state` and `3box-ui-system` package, simplifying initializing a state provider and a components to interface between user interaction and the underlying `3box.js` methods.
 
