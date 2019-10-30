@@ -1,157 +1,118 @@
-# 3ID System
-### 3Box React State/Interface Management
+# 3Box Extensions
+The 3Box Extensions module is an experiment to push the boundaries of 3Box in the Interface.
 
-![image](https://imgur.com/zUQDDJQ.png)
+Simplifying the steps required to add decentralized authentication, storage and messaging. The 3Box Extensions repo is split into a monorepo to simplify module development and experimentation. The primary modules to get started are the `3box-ui-state` and `3box-ui-system` package, simplifying initializing a state provider and a components to interface between user interaction and the underlying `3box.js` methods.
 
-### Lerna
+## Resources
+Before getting started with this repo, please reference the 3Box documentation and libraries.
+- https://docs.3box.io/
+- https://www.npmjs.com/package/3box
+
+## Major Packages
+- 3Box UI State (3box-ui-state)
+- 3Box UI System (3box-ui-system)
+- 3Box UI System Render (3box-ui-system-render)
+- 3Box UI Profiles (3box-ui-profiles)
+- 3Box UI Profiles Stateless (3box-ui-profiles-stateless)
+
+## Developer Setup
+
 Install: `yarn`
 
-Setup Everything: `yarn $`
+Watch: `yarn watch`
 
-Watch Directories: `yarn watch`
+Run: `cd packages/apps/dapp ; yarn start`
 
 More developer documentation coming soon.
 
+## Development Planning
+- [x] Create MVC (Minimal Viable Code)
+- [ ] Test Current Approach
+- [ ] Calibrate Approach
+- [ ] Add Complete UI System
+- [ ] Add Plugin System
 
-### Examples
+## 3Box UI System Examples
+Below is small sample of components to help enable rapid development.
 
-#### Box Provider
-Add a 3Box provider to an application component hierarchy.
 
+### Login
 ```js
-import React from 'react'
-import { BoxProvider } from '3ID-system'
-export default props =>
-<BoxProvider>
-  {props.children}
-</BoxProvider>
+import { Login } from '@kames/3box-system'
+const Component = props => { 
+ return(
+  <Login />
+)}
 ```
 
-
-#### Enable Ethereum
-Request permissions from the environment wallet.
-
+### AccessProfile
 ```js
-import React from 'react'
-import { EnableEtheruem } from '3ID-system'
-export default props =>(
-  <EnableEtheruem
-    componentIsDisconnected={CustomComponent}
-    componentIsLoading={CustomComponent}
-    componentIsConnected={CustomComponent}
-  />
-)
+import { AccessProfile } from '@kames/3box-system'
+const Component = props => { 
+ return(
+  <AccessProfile>
+    <MyFormComponent />
+  </AccessThread>
+)}
 ```
 
-
-#### Login
-Authentication Login Button
-
+### AccessSpace
 ```js
-import React from 'react'
-import { 
-  Login,
-  LoginButton,
-  LoginModal,
-} from '3ID-system'
-export default props => (
-  <Login variants={['tag']} />
-  <LoginButton 
-    componentIsLoggedOut={CustomComponent}
-    componentIsLoading={CustomComponent}
-    componentIsLoggedIn={CustomComponent}
-  />
-)
+import { AccessSpace } from '@kames/3box-system'
+const Component = props => { 
+ return(
+  <AccessSpace space='web3'>
+    <MyFormComponent />
+  </AccessThread>
+)}
 ```
 
-#### Open Space
-Request opening a user space.
+### AccessThread
 ```js
-import React from 'react'
-import { SpaceOpen } from '3ID-system'
-export default props => <SpaceOpen space='3box' />
-```
-#### Thread Join
-Join a thread. Pass in options to specify exact thread target.
-```js
-import React from 'react'
-import { Login } from '3ID-system'
-export default props => (
-  <ThreadJoin
-    space='3box'
-    threadName='commentThread'
-    options={{members: false}}
-  />
-)
-
-
-```
-## Access
-
-
-#### Access Authentication
-```js
-import React from 'react'
-import { AccessAuthentication } from '3ID-system'
-export default props =>
-<AccessAuthentication>
-  <div>
-    Authentication Is Complete. Add important task.
-  </div>
-</AccessAuthentication>
+import { AccessThread } from '@kames/3box-system'
+const Component = props => { 
+ return(
+  <AccessThread
+    space='web3'
+    thread='comments'
+    threadOptions={
+      members: true,
+    }
+  >
+    <MyFormComponent />
+  </AccessThread>
+)}
 ```
 
-#### Access Space
+### MessagePost
 ```js
-import React from 'react'
-import { AccessSpace } from '3ID-system'
-export default props =>
-<AccessSpace space='web3'>
-  <div>
-    Logged In and Space Open
-  </div>
-</AccessSpace>
+import { MessagePost } from '@kames/3box-system'
+const Component = props => { 
+ return(
+   <MessagePost threadName='comments'>
+    <span>delete thread message</span>
+  </MessagePost>
+)}
 ```
 
-#### Access Thread
+### MessageDelete
 ```js
-import React from 'react'
-import { AccessThread } from '3ID-system'
-export default props =>
-<AccessThread space='web3' threadName='home'>
-  <div>
-    Logged In, Space Open and Thread Joined
-  </div>
-</AccessThread>
+import { MessageDelete } from '@kames/3box-system'
+const Component = props => { 
+ return(
+   <MessageDelete threadName='comments' postId='123456689'>
+    <span>Delete Message</span>
+  </MessageDelete>
+)}
 ```
 
-## Storage
-
-#### Storage Set
-Set a value in a 3Box profile or space.
+### ThreadJoin
 ```js
-import React from 'react'
-import { StorageSet } from '3ID-system'
-export default props => 
-<StorageSet 
-  access='public' 
-  index={values.key} 
-  value={values.value}
-  space={undefined} // OPTIONAL VALUE
-  onSet={setStorageSet}  
-/> 
-```
-
-#### Storage Remove
-Merge a value in a 3Box profile or space. Access nested objects and arrays with support for dot notation.
-```js
-import React from 'react'
-import { StorageSet } from '3ID-system'
-export default props => 
-<Storage
-  access='public' 
-  index={'key'}
-  space={undefined} // OPTIONAL VALUE
-  onStorageRemove={callback}  
-/> 
+import { ThreadJoin } from '@kames/3box-system'
+const Component = props => { 
+ return(
+   <ThreadJoin space='web3' threadName='comments'  >
+    <span>Join Thread</span>
+  </ThreadJoin>
+)}
 ```
