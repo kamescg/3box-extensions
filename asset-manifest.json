@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/3box-extensions/static/css/main.d6217e74.chunk.css",
+    "main.js": "/3box-extensions/static/js/main.a2ffddae.chunk.js",
+    "main.js.map": "/3box-extensions/static/js/main.a2ffddae.chunk.js.map",
+    "runtime~main.js": "/3box-extensions/static/js/runtime~main.9c56512c.js",
+    "runtime~main.js.map": "/3box-extensions/static/js/runtime~main.9c56512c.js.map",
+    "static/js/2.1797763c.chunk.js": "/3box-extensions/static/js/2.1797763c.chunk.js",
+    "static/js/2.1797763c.chunk.js.map": "/3box-extensions/static/js/2.1797763c.chunk.js.map",
+    "index.html": "/3box-extensions/index.html",
+    "precache-manifest.e757e2cb0f874d77e1be4f94977cdd4c.js": "/3box-extensions/precache-manifest.e757e2cb0f874d77e1be4f94977cdd4c.js",
+    "service-worker.js": "/3box-extensions/service-worker.js",
+    "static/css/main.d6217e74.chunk.css.map": "/3box-extensions/static/css/main.d6217e74.chunk.css.map"
+  }
+}
