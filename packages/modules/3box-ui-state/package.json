@@ -1,6 +1,6 @@
 {
   "name": "3box-ui-state",
-  "description": "3Box Browser State & Effect Management Context",
+  "description": "3Box State Management",
   "version": "0.0.1",
   "author": "Kames <info@kamescg.com> (https://www.kamescg.com)",
   "homepage": "https://github.com/kamescg/3box-react-context",

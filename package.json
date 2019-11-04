@@ -1,6 +1,6 @@
 {
-  "name": "3id-system",
-  "desription": "3Box React State/Interface Management",
+  "name": "3box-extensions",
+  "desription": "3Box Extensions and Plugins",
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",

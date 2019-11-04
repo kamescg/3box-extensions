@@ -1,8 +1,8 @@
 # 3Box Extensions
 
-The 3Box Extensions module is an experiment to push the boundaries of 3Box in the Interface.
+The 3Box Extensions module is an experiment to create plugins for 3Box.
 
-Simplifying the steps required to add decentralized authentication, storage and messaging. The 3Box Extensions repo is split into a monorepo to simplify module development and experimentation. The primary modules to get started are the `3box-ui-state` and `3box-ui-system` package, simplifying initializing a state provider and a components to interface between user interaction and the underlying `3box.js` methods.
+Simplifying the steps required to add decentralized authentication, storage and messaging.
 
 ## Resources
 
@@ -28,14 +28,6 @@ Watch: `yarn watch`
 Run: `cd packages/apps/dapp ; yarn start`
 
 More developer documentation coming soon.
-
-## Development Planning
-
-- [x] Create MVC (Minimal Viable Code)
-- [ ] Test Current Approach
-- [ ] Calibrate Approach
-- [ ] Add Complete UI System
-- [ ] Add Plugin System
 
 ## 3Box UI State
 
@@ -68,7 +60,7 @@ threadAddMember: () => { },
 
 The full context includes a of initial state defaults and empty functions which will be replace via the initialized action types.
 
-## 3Box UI System Examples
+## 3Box UI System
 
 Below is small sample of components to help enable rapid development.
 
@@ -76,80 +68,50 @@ Below is small sample of components to help enable rapid development.
 
 ```js
 import {Login} from '@kames/3box-system';
-const Component = props => {
-  return <Login />;
-};
+const Component = props => <Login />;
 ```
+
+## Access Control
 
 ### AccessProfile
 
 ```js
 import { AccessProfile } from '@kames/3box-system'
-const Component = props => {
- return(
-  <AccessProfile>
-    <MyFormComponent />
-  </AccessThread>
-)}
+const Component = props =>
+<AccessProfile>
+  <MyFormComponent />
+</AccessThread>
 ```
 
 ### AccessSpace
 
 ```js
 import { AccessSpace } from '@kames/3box-system'
-const Component = props => {
- return(
-  <AccessSpace space='web3'>
-    <MyFormComponent />
-  </AccessThread>
-)}
+const Component = props =>
+<AccessSpace space='web3'>
+  <MyFormComponent />
+</AccessThread>
 ```
 
 ### AccessThread
 
 ```js
 import { AccessThread } from '@kames/3box-system'
-const Component = props => {
- return(
-  <AccessThread
-    space='web3'
-    thread='comments'
-    threadOptions={
-      members: true,
-    }
-  >
-    <MyFormComponent />
-  </AccessThread>
-)}
+const Component = props =>
+<AccessThread
+  space='web3'
+  thread='comments'
+  threadOptions={
+    members: true,
+  }
+>
+  <MyFormComponent />
+</AccessThread>
 ```
 
-### MessagePost
+### Threads
 
-```js
-import {MessagePost} from '@kames/3box-system';
-const Component = props => {
-  return (
-    <MessagePost threadName="comments">
-      <span>delete thread message</span>
-    </MessagePost>
-  );
-};
-```
-
-### MessageDelete
-
-```js
-import {MessageDelete} from '@kames/3box-system';
-const Component = props => {
-  return (
-    <MessageDelete threadName="comments" postId="123456689">
-      <span>Delete Message</span>
-    </MessageDelete>
-  );
-};
-```
-
-### ThreadJoin
+#### ThreadJoin
 
 ```js
 import {ThreadJoin} from '@kames/3box-system';
@@ -158,6 +120,32 @@ const Component = props => {
     <ThreadJoin space="web3" threadName="comments">
       <span>Join Thread</span>
     </ThreadJoin>
+  );
+};
+```
+
+#### PostPublish
+
+```js
+import {PostPublish} from '@kames/3box-system';
+const Component = props => {
+  return (
+    <PostPublish threadName="comments">
+      <span>delete thread message</span>
+    </PostPublish>
+  );
+};
+```
+
+### PostDelete
+
+```js
+import {PostDelete} from '@kames/3box-system';
+const Component = props => {
+  return (
+    <PostDelete threadName="comments" postId="123456689">
+      <span>Delete Message</span>
+    </PostDelete>
   );
 };
 ```
