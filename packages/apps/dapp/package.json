@@ -1,7 +1,7 @@
 {
   "name": "3box-extensions",
   "author": "Kames <info@kamescg.com>",
-  "homepage": "https://kamescg.github.io/3box-extensions",
+  "homepage": "https://3box-dev.netlify.com/",
   "description": "Extending the 3Box Universe",
   "private": false,
   "version": "0.0.1",
@@ -11,7 +11,7 @@
     "test": "node scripts/test.js",
     "lint": "eslint ./src/**/*.js --max-warnings=0 --format=codeframe",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -b build"
   },
   "dependencies": {
     "3box-ui-state": "^0.0.1",

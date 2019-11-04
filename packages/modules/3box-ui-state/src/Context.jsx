@@ -13,17 +13,7 @@ const Context = createContext({
   auth: {
     instance: undefined,
     spaces: {},
-    threads: {},
-  },
-  // Global Configuration
-  config: {
-    cms: {}
-  },
-  // General data storage.
-  data: {
-    profiles: {},
-    spaces: {},
-    threads: {},
+    threads: {}
   },
   // Register onUpdate (thread listening) requests.
   listening: {},
@@ -43,10 +33,9 @@ const Context = createContext({
     sets: [],
     spaces: [],
     threads: [],
-    threadsGet: [],
+    threadsGet: []
   },
   profile: {},
-
 
   // Library
   instance: box, // Login initializes instances.
@@ -72,39 +61,39 @@ const Context = createContext({
   isDebugging: false,
 
   /* --- Functions --- */
-  enable: () => { },
-  open: () => { },
-  logout: () => { },
-  addRequest: () => { },
-  confirmRequest: () => { },
-  confirmAllRequests: () => { },
-  openSpace: () => { },
-  listSpaces: () => { },
-  subscribedThreads: () => { },
-  getThread: () => { },
-  getThreadByAddress: () => { },
-  getConfig: () => { },
-  getVerifiedAccounts: () => { },
-  joinThread: () => { },
-  joinThreadByAddress: () => { },
-  threadPost: () => { },
-  threadPostDelete: () => { },
-  threadListen: () => { },
-  threadAddModerator: () => { },
-  threadAddMember: () => { },
-  getProfile: () => { },
-  lookupProfile: () => { },
-  rejectRequest: () => { },
-  verified: () => { },
-  get: () => { },
-  remove: () => { },
-  removeItem: () => { },
-  set: () => { },
-  setMultiple: () => { },
-  listAddressLinks: () => { },
-  isAddressLinked: () => { },
-  linkAddress: () => { },
-  removeAddressList: () => { },
+  enable: () => {},
+  login: () => {},
+  logout: () => {},
+  addRequest: () => {},
+  confirmRequest: () => {},
+  confirmAllRequests: () => {},
+  openSpace: () => {},
+  listSpaces: () => {},
+  subscribedThreads: () => {},
+  getThread: () => {},
+  getThreadByAddress: () => {},
+  getConfig: () => {},
+  getVerifiedAccounts: () => {},
+  joinThread: () => {},
+  joinThreadByAddress: () => {},
+  threadPost: () => {},
+  threadPostDelete: () => {},
+  threadListen: () => {},
+  threadAddModerator: () => {},
+  threadAddMember: () => {},
+  getProfile: () => {},
+  lookupProfile: () => {},
+  rejectRequest: () => {},
+  verified: () => {},
+  get: () => {},
+  remove: () => {},
+  removeItem: () => {},
+  set: () => {},
+  setMultiple: () => {},
+  listAddressLinks: () => {},
+  isAddressLinked: () => {},
+  linkAddress: () => {},
+  removeAddressList: () => {}
 });
 
 export default Context;

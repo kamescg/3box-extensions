@@ -14,7 +14,7 @@ import { Router } from '@reach/router'
 * Initialize application state providers.
 * @todo Create provider plugin system.
 */
-import Providers from './providersWithLocation'
+import Providers from './providers'
 
 import {
 	Account,

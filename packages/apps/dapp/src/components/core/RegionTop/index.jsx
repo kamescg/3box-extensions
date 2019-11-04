@@ -14,7 +14,7 @@ const RegionTop = props => {
       <Atom.Flex alignCenter>
         <Link to='/'>
           <Atom.Heading sm heavy mb={0}>{GLOBAL.siteName}</Atom.Heading>
-          <Atom.Heading xxs normal>Community Initiative</Atom.Heading>
+          <Atom.Heading xxs normal>A Rapid Experiment</Atom.Heading>
         </Link>
 
         {/* Menu */}
