@@ -59,7 +59,7 @@ const OpenSpace = ({ box, isMenuAvailable, styled, ...props }) => {
 
 const LoggedOut = props =><Span {...props}>{props.loggedOutLabel}</Span>
 const Loading = props =><Span {...props}>Loading</Span>
-const LoggedIn = props =><Span {...props}>Open Space Now</Span>
+const LoggedIn = props =><Span pointer bgWhite cNight {...props}>Open Space Now</Span>
 const SpaceRequest = props =><Span {...props}>Requesting Access</Span>
 const SpaceOpen = props =><Span {...props}>space <strong>{props.space}</strong> open</Span>
 

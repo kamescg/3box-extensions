@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _effects = require("./effects");
 
@@ -63,6 +63,6 @@ StorageSet.defaultProps = {
 };
 StorageSet.propTypes = {};
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(StorageSet, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(StorageSet, props));
 
 exports.default = _default;

@@ -49,13 +49,13 @@ const EnableEthereum = ({ box, ...props }) => {
 
 EnableEthereum.defaultProps = {
   componentIsDisconnected: (
-    <Span variants={['tag']} effects={['white', 'pointer']} >Enable</Span>
+    <Span tag pointer >Enable</Span>
     ),
   componentIsLoading: (
-    <Span variants={['tag']} effects={['white']} >Loading</Span>
+    <Span tag >Loading</Span>
   ),
   componentIsConnected:(
-    <Span variants={['tag']} effects={['white', 'pointer']} >Etheruem Enabled</Span>
+    <Span tag pointer >Etheruem Enabled</Span>
     )
 }
 

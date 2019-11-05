@@ -25,9 +25,15 @@ var useStorageRetrieveEffect = (state, props) => {
   var [data, setData] = (0, _react.useState)();
   (0, _react.useEffect)(() => {
     if (state['@'][props.address]) {
-      var _data = _dotPropImmutableChain.default.get(state, "@.".concat(props.address, ".profile.").concat(props.selector));
+      var _data;
 
-      setData(_data);
+      if (!props.space) {
+        _data = _dotPropImmutableChain.default.get(state, "@.".concat(props.address, ".profile.").concat(props.selector));
+        setData(_data);
+      } else {
+        _data = _dotPropImmutableChain.default.get(state, "@.".concat(props.address, ".spaces.").concat(props.space, ".").concat(props.access, ".").concat(props.selector));
+        setData(_data);
+      }
     }
   }, [state['@'][props.address], props]);
   return {

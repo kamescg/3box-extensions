@@ -1,15 +1,15 @@
 "use strict";
 
-var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/3box-personal-space/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
+var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-var _extends2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-personal-space/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/extends"));
+var _extends2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/extends"));
 
-var _objectWithoutProperties2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-personal-space/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties"));
+var _objectWithoutProperties2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties"));
 
 var _idx = _interopRequireDefault(require("idx"));
 
@@ -17,7 +17,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactHookForm = _interopRequireDefault(require("react-hook-form"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
@@ -113,7 +113,7 @@ FormProfileName.defaultProps = {
 };
 
 var _default = function _default(props) {
-  return _react["default"].createElement(_boxReactState.BoxContext, null, function (box) {
+  return _react["default"].createElement(_boxUiState.BoxContext, null, function (box) {
     return _react["default"].createElement(FormProfileName, (0, _extends2["default"])({
       box: box
     }, props));

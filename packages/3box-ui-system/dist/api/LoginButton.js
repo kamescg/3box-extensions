@@ -9,7 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _effects = require("./effects");
 
@@ -34,28 +34,19 @@ var Login = (_ref) => {
 
   var login = (0, _effects.useOpenRequestEffect)(box);
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("span", {
-    onClick: box.enable
+    onClick: box.login
   }, !login.isDispatched && !login.isLoggedIn ? !_react.default.isValidElement(props.componentIsLoggedOut) ? _react.default.createElement(props.componentIsLoggedOut) : props.componentIsLoggedOut || null : null), _react.default.createElement("span", null, login.isDispatched && !login.isLoggedIn ? !_react.default.isValidElement(props.componentIsLoading) ? _react.default.createElement(props.componentIsLoading) : props.componentIsLoading || null : null), login.isLoggedIn && _react.default.createElement("span", null, props.children || !_react.default.isValidElement(props.componentIsLoggedIn) ? _react.default.createElement(props.componentIsLoggedIn) : props.componentIsLoggedIn || null));
 };
 
 Login.defaultProps = {
-  componentIsLoggedOut: _react.default.createElement(_designSystemAtoms.Button, {
-    variants: ['button'],
-    effects: ['blue', 'pointer']
-  }, "3Box"),
-  componentIsLoading: _react.default.createElement(_designSystemAtoms.Button, {
-    variants: ['button'],
-    effects: ['white']
-  }, "3Box Loading"),
-  componentIsLoggedIn: _react.default.createElement(_designSystemAtoms.Button, {
-    variants: ['button'],
-    effects: ['white', 'pointer']
-  }, "3Box Active")
+  componentIsLoggedOut: _react.default.createElement(_designSystemAtoms.Button, null, "3Box"),
+  componentIsLoading: _react.default.createElement(_designSystemAtoms.Button, null, "3Box Loading"),
+  componentIsLoggedIn: _react.default.createElement(_designSystemAtoms.Button, null, "3Box Active")
 };
 Login.propTypes = {
   spaceAuto: PropTypes.bool
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(Login, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(Login, props));
 
 exports.default = _default;

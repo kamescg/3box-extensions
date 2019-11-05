@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Match } from '@reach/router'
 
 /* --- Local Dependencies --- */
-import Atom from '@horizin/design-system-atoms'
+import { Flex, Span, HorizontalRule, Heading} from '@horizin/design-system-atoms'
 import Link from '../Link'
 
 /* --- Module --- */
@@ -45,17 +45,17 @@ const MenuItem = ({ children, label, to, icon, vertical, ...props }) => {
 
 
   return (
-    <Atom.Flex sx={props.sx} flexDirection={props.flexDirection || 'row'} >
-      <Atom.Flex
+    <Flex sx={props.sx} flexDirection={props.flexDirection || 'row'} >
+      <Flex
         alignCenter between
         sx={{ alignContent: 'center', ...props.styledWrapper }}
         active={props.styledWrapperActive}>
 
         {props.image &&
-          <Atom.Span sx={{ ...sxImageWrapper }}>{props.image}</Atom.Span>
+          <Span sx={{ ...sxImageWrapper }}>{props.image}</Span>
         }
 
-        <Atom.Flex alignCenter between width='100%'>
+        <Flex alignCenter between width='100%'>
           <WrapperLink
             to={to}
             sx={{
@@ -70,25 +70,25 @@ const MenuItem = ({ children, label, to, icon, vertical, ...props }) => {
             active={props.active}
             getProps={activateMenu}
           >
-            <Atom.Span {...props.styledLabel}>{label}</Atom.Span>
+            <Span {...props.styledLabel}>{label}</Span>
           </WrapperLink>
 
           {
             children && /* Menu Item Children Toggle */
             <span onClick={() => setOpen(!isOpen)}>
-              <Atom.Span sx={{ cursor: 'pointer' }} p={2} width={30} ml='auto'>
-                <Atom.Span xxs opacity={.3} transform={isOpen ? 'rotate(90deg)' : ''}>{isOpen ? '▶' : '▶'}</Atom.Span>
-              </Atom.Span>
+              <Span sx={{ cursor: 'pointer' }} p={2} width={30} ml='auto'>
+                <Span xxs opacity={.3} transform={isOpen ? 'rotate(90deg)' : ''}>{isOpen ? '▶' : '▶'}</Span>
+              </Span>
             </span>
           }
-        </Atom.Flex>
-      </Atom.Flex>
+        </Flex>
+      </Flex>
 
       {
         isOpen && children &&
-        <Atom.Flex flexDirection={props.flexDirection || 'row'} >
+        <Flex flexDirection={props.flexDirection || 'row'} >
           {children.map((c, index) =>
-            <Atom.Flex column key={index} sx={sxChild}>
+            <Flex column key={index} sx={sxChild}>
               <WrapperLink
                 to={c.to}
                 className='child'
@@ -100,15 +100,15 @@ const MenuItem = ({ children, label, to, icon, vertical, ...props }) => {
                   },
                 }}
               >
-                <Atom.Flex alignCenter between px={2}>
-                  <Atom.Span xs>{c.label}</Atom.Span>
-                  <Atom.Span sx={{ ...sxImageWrapperChild }}>{c.image && c.image}</Atom.Span>
-                </Atom.Flex>
+                <Flex alignCenter between px={2}>
+                  <Span xs>{c.label}</Span>
+                  <Span sx={{ ...sxImageWrapperChild }}>{c.image && c.image}</Span>
+                </Flex>
               </WrapperLink>
-            </Atom.Flex>)}
-        </Atom.Flex>
+            </Flex>)}
+        </Flex>
       }
-    </Atom.Flex>
+    </Flex>
   )
 }
 
@@ -130,7 +130,7 @@ MenuItem.defaultProps = {
 export default ({ items, label, ...props }) =>
   <>
     <LabelMenu label={label} />
-    <Atom.Flex flexDirection={props.direction || 'row'} sx={props.sxMenu} >
+    <Flex flexDirection={props.direction || 'row'} sx={props.sxMenu} >
       {Array.isArray(items) && items.length > 0 &&
         items.map((item, index) =>
           <MenuItem
@@ -140,7 +140,7 @@ export default ({ items, label, ...props }) =>
             {...item}
             {...props}
           />)}
-    </Atom.Flex>
+    </Flex>
   </>
 
 
@@ -163,10 +163,10 @@ const LabelMenu = props => {
   return (
     props.label ?
       <>
-        <Atom.Heading fontSize={[2]} as='h5' noMargin>
+        <Heading fontSize={[2]} as='h5' noMargin>
           {props.label}
-        </Atom.Heading>
-        <Atom.HorizontalRule my={2} />
+        </Heading>
+        <HorizontalRule my={2} />
       </>
       : null
   )

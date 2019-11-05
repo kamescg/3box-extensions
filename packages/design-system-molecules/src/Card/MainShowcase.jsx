@@ -4,8 +4,7 @@
  */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
-import Atom from '@horizin/design-system-atoms'
+import { Text, Flex, Image, Heading, Span} from '@horizin/design-system-atoms'
 
 const ComponentMainDefault = props => {
   const [sxMain, setSXMain] = useState({})
@@ -107,30 +106,30 @@ const ComponentMainDefault = props => {
 
   console.log(sxMain, 'sxMainsxMain')
   return (
-    <Atom.Flex sx={{ flexDirection: 'column', ...sxMain }}>
+    <Flex sx={{ flexDirection: 'column', ...sxMain }}>
       {
         props.image &&
-        <Atom.Span sx={{ ...sxImageWrap }}>
-          <Atom.Image src={props.image} sx={sxImage} />
-        </Atom.Span>
+        <Span sx={{ ...sxImageWrap }}>
+          <Image src={props.image} sx={sxImage} />
+        </Span>
       }
-      <Atom.Heading sx={sxTitle}>
+      <Heading sx={sxTitle}>
         {props.title}
-      </Atom.Heading>
-      <Atom.Heading md heavy sx={sxTagline} >{props.tagline}</Atom.Heading>
+      </Heading>
+      <Heading md heavy sx={sxTagline} >{props.tagline}</Heading>
       {
         props.summary &&
-        <Atom.Text sx={sxSummary}>
+        <Text sx={sxSummary}>
           {props.summary}
-        </Atom.Text>
+        </Text>
       }
       {
         props.content &&
-        <Atom.Text sx={sxContent}>
+        <Text sx={sxContent}>
           {props.content}
-        </Atom.Text>
+        </Text>
       }
-    </Atom.Flex>
+    </Flex>
   )
 }
 

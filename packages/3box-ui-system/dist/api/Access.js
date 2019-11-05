@@ -13,7 +13,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _BoxSpaceOpen = _interopRequireDefault(require("../components/BoxSpaceOpen"));
 
@@ -47,7 +47,7 @@ var BoxAccess = (_ref) => {
   } = _ref,
       props = _objectWithoutProperties(_ref, ["level"]);
 
-  return _react.default.createElement(_boxReactState.BoxContext, null, box => _react.default.createElement(_react.default.Fragment, null, level === 'disabled' && props.children, level === 'enabled' && _react.default.createElement(LevelEnabled, _extends({
+  return _react.default.createElement(_boxUiState.BoxContext, null, box => _react.default.createElement(_react.default.Fragment, null, level === 'disabled' && props.children, level === 'enabled' && _react.default.createElement(LevelEnabled, _extends({
     box: box
   }, props)), level === 'login' && _react.default.createElement(LevelLogin, _extends({
     box: box
@@ -92,7 +92,7 @@ BoxAccess.propTypes = {
   level: _propTypes.default.string
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(BoxAccess, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(BoxAccess, props));
 /**
  * @function LevelEnabled
  * @param {*} props 

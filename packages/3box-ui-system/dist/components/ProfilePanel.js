@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _utilities = require("../utilities");
 
@@ -43,6 +43,6 @@ BoxLoginAvatar.defaultProps = {
   })
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(BoxLoginAvatar, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(BoxLoginAvatar, props));
 
 exports.default = _default;

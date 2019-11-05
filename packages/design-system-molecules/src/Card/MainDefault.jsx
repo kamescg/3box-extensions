@@ -5,7 +5,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Atom from '@horizin/design-system-atoms'
+import { Image, Box, Text, Flex, Heading, Span} from '@horizin/design-system-atoms'
 import { Link } from '@horizin/design-system-molecules'
 
 const ComponentMainDefault = props => {
@@ -186,18 +186,18 @@ const ComponentMainDefault = props => {
 
 
   return (
-    <Atom.Flex sx={{ flexDirection: 'column', ...sxMain }}>
-      <Atom.Flex sx={props.sxDetails}>
+    <Flex sx={{ flexDirection: 'column', ...sxMain }}>
+      <Flex sx={props.sxDetails}>
         {
           props.image &&
-          <Atom.Span sx={{ ...sxImageWrap }}>
-            <Atom.Image src={props.image} sx={sxImage} />
-          </Atom.Span>
+          <Span sx={{ ...sxImageWrap }}>
+            <Image src={props.image} sx={sxImage} />
+          </Span>
         }
-        <Atom.Box>
+        <Box>
           {
             props.title &&
-            <Atom.Heading sx={sxTitle}>
+            <Heading sx={sxTitle}>
               {
                 props.isTitleLink && props.to
                   ? <Link to={`${props.toPrefix}${props.to}`}>
@@ -206,25 +206,25 @@ const ComponentMainDefault = props => {
                   : props.title
               }
 
-            </Atom.Heading>
+            </Heading>
           }
           {
             props.tagline &&
-            <Atom.Heading md heavy sx={sxTagline} >{props.tagline}</Atom.Heading>
+            <Heading md heavy sx={sxTagline} >{props.tagline}</Heading>
           }
-        </Atom.Box>
-      </Atom.Flex>
+        </Box>
+      </Flex>
       {
         props.summary &&
-        <Atom.Text as='p' sx={sxSummary}>
+        <Text as='p' sx={sxSummary}>
           {props.summary}
-        </Atom.Text>
+        </Text>
       }
       {
         props.content &&
-        <Atom.Text sx={sxContent}>
+        <Text sx={sxContent}>
           {props.content}
-        </Atom.Text>
+        </Text>
       }
       {
         props.actions &&
@@ -239,7 +239,7 @@ const ComponentMainDefault = props => {
           View
         </Link>
       }
-    </Atom.Flex>
+    </Flex>
   )
 }
 

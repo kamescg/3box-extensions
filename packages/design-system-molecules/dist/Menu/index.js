@@ -9,7 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _router = require("@reach/router");
 
-var _designSystemAtoms = _interopRequireDefault(require("@horizin/design-system-atoms"));
+var _designSystemAtoms = require("@horizin/design-system-atoms");
 
 var _Link = _interopRequireDefault(require("../Link"));
 
@@ -70,19 +70,19 @@ var MenuItem = (_ref) => {
       my: 1
     }));
   }, [props.direction]);
-  return _react.default.createElement(_designSystemAtoms.default.Flex, {
+  return _react.default.createElement(_designSystemAtoms.Flex, {
     sx: props.sx,
     flexDirection: props.flexDirection || 'row'
-  }, _react.default.createElement(_designSystemAtoms.default.Flex, {
+  }, _react.default.createElement(_designSystemAtoms.Flex, {
     alignCenter: true,
     between: true,
     sx: _objectSpread({
       alignContent: 'center'
     }, props.styledWrapper),
     active: props.styledWrapperActive
-  }, props.image && _react.default.createElement(_designSystemAtoms.default.Span, {
+  }, props.image && _react.default.createElement(_designSystemAtoms.Span, {
     sx: _objectSpread({}, sxImageWrapper)
-  }, props.image), _react.default.createElement(_designSystemAtoms.default.Flex, {
+  }, props.image), _react.default.createElement(_designSystemAtoms.Flex, {
     alignCenter: true,
     between: true,
     width: "100%"
@@ -97,24 +97,24 @@ var MenuItem = (_ref) => {
     }),
     active: props.active,
     getProps: _helpers.activateMenu
-  }, _react.default.createElement(_designSystemAtoms.default.Span, props.styledLabel, label)), children &&
+  }, _react.default.createElement(_designSystemAtoms.Span, props.styledLabel, label)), children &&
   /* Menu Item Children Toggle */
   _react.default.createElement("span", {
     onClick: () => setOpen(!isOpen)
-  }, _react.default.createElement(_designSystemAtoms.default.Span, {
+  }, _react.default.createElement(_designSystemAtoms.Span, {
     sx: {
       cursor: 'pointer'
     },
     p: 2,
     width: 30,
     ml: "auto"
-  }, _react.default.createElement(_designSystemAtoms.default.Span, {
+  }, _react.default.createElement(_designSystemAtoms.Span, {
     xxs: true,
     opacity: .3,
     transform: isOpen ? 'rotate(90deg)' : ''
-  }, isOpen ? '▶' : '▶'))))), isOpen && children && _react.default.createElement(_designSystemAtoms.default.Flex, {
+  }, isOpen ? '▶' : '▶'))))), isOpen && children && _react.default.createElement(_designSystemAtoms.Flex, {
     flexDirection: props.flexDirection || 'row'
-  }, children.map((c, index) => _react.default.createElement(_designSystemAtoms.default.Flex, {
+  }, children.map((c, index) => _react.default.createElement(_designSystemAtoms.Flex, {
     column: true,
     key: index,
     sx: sxChild
@@ -127,13 +127,13 @@ var MenuItem = (_ref) => {
         opacity: 1
       }
     })
-  }, _react.default.createElement(_designSystemAtoms.default.Flex, {
+  }, _react.default.createElement(_designSystemAtoms.Flex, {
     alignCenter: true,
     between: true,
     px: 2
-  }, _react.default.createElement(_designSystemAtoms.default.Span, {
+  }, _react.default.createElement(_designSystemAtoms.Span, {
     xs: true
-  }, c.label), _react.default.createElement(_designSystemAtoms.default.Span, {
+  }, c.label), _react.default.createElement(_designSystemAtoms.Span, {
     sx: _objectSpread({}, sxImageWrapperChild)
   }, c.image && c.image)))))));
 };
@@ -161,7 +161,7 @@ var _default = (_ref2) => {
 
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(LabelMenu, {
     label: label
-  }), _react.default.createElement(_designSystemAtoms.default.Flex, {
+  }), _react.default.createElement(_designSystemAtoms.Flex, {
     flexDirection: props.direction || 'row',
     sx: props.sxMenu
   }, Array.isArray(items) && items.length > 0 && items.map((item, index) => _react.default.createElement(MenuItem, _extends({
@@ -191,11 +191,11 @@ var WrapperLink = (_ref3) => {
 };
 
 var LabelMenu = props => {
-  return props.label ? _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_designSystemAtoms.default.Heading, {
+  return props.label ? _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_designSystemAtoms.Heading, {
     fontSize: [2],
     as: "h5",
     noMargin: true
-  }, props.label), _react.default.createElement(_designSystemAtoms.default.HorizontalRule, {
+  }, props.label), _react.default.createElement(_designSystemAtoms.HorizontalRule, {
     my: 2
   })) : null;
 };

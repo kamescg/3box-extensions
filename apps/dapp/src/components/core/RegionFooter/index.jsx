@@ -9,7 +9,7 @@ import { Link } from '@reach/router'
 
 const Footer = props => {
   return (
-    <Atom.Flex alignCenter between sx={{ variant: 'layout.header' }}>
+    <Atom.Flex alignCenter between sx={{ variant: 'regions.footer' }}>
       {/* Left */}
       <Atom.Flex alignCenter>
         <Link to='/'>
@@ -38,7 +38,7 @@ const Footer = props => {
       {/* Right */}
 
       <Atom.Flex alignCenter>
-        <Atom.Span xxs>Built by Rapid at ConsenSys</Atom.Span>
+        <Atom.Span xxs>Built by Kames - Decentralized Frontend Developer</Atom.Span>
       </Atom.Flex>
     </Atom.Flex>
   )

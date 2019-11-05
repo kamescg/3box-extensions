@@ -1,6 +1,6 @@
 "use strict";
 
-var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/3box-personal-space/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
+var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -8,19 +8,19 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "ProfileAvatar", {
   enumerable: true,
   get: function get() {
-    return _boxSystemProfilesViews.ProfileAvatar;
+    return _boxUiProfilesStateless.ProfileAvatar;
   }
 });
 Object.defineProperty(exports, "ProfileCover", {
   enumerable: true,
   get: function get() {
-    return _boxSystemProfilesViews.ProfileCover;
+    return _boxUiProfilesStateless.ProfileCover;
   }
 });
 Object.defineProperty(exports, "ProfileIdentity", {
   enumerable: true,
   get: function get() {
-    return _boxSystemProfilesViews.ProfileIdentity;
+    return _boxUiProfilesStateless.ProfileIdentity;
   }
 });
 Object.defineProperty(exports, "Avatar", {
@@ -127,7 +127,7 @@ Object.defineProperty(exports, "effects", {
 });
 exports["default"] = void 0;
 
-var _boxSystemProfilesViews = require("3box-ui-profiles-stateless");
+var _boxUiProfilesStateless = require("3box-ui-profiles-stateless");
 
 var _Avatar = _interopRequireDefault(require("./api/Avatar"));
 
@@ -160,8 +160,8 @@ var _FormName = _interopRequireDefault(require("./forms/FormName"));
 var _effects = _interopRequireDefault(require("./api/effects"));
 
 var _default = {
-  ProfileAvatar: _boxSystemProfilesViews.ProfileAvatar,
-  ProfileCover: _boxSystemProfilesViews.ProfileCover,
-  ProfileIdentity: _boxSystemProfilesViews.ProfileIdentity
+  ProfileAvatar: _boxUiProfilesStateless.ProfileAvatar,
+  ProfileCover: _boxUiProfilesStateless.ProfileCover,
+  ProfileIdentity: _boxUiProfilesStateless.ProfileIdentity
 };
 exports["default"] = _default;

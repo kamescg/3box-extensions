@@ -1,19 +1,19 @@
 "use strict";
 
-var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/3box-personal-space/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
+var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-var _objectWithoutProperties2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-personal-space/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties"));
+var _objectWithoutProperties2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties"));
 
 var _react = _interopRequireDefault(require("react"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
-var _boxSystemProfilesViews = require("3box-ui-profiles-stateless");
+var _boxUiProfilesStateless = require("3box-ui-profiles-stateless");
 
 /**
  * @function Avatar
@@ -30,13 +30,13 @@ var Avatar = function Avatar(_ref) {
   }, _react["default"].createElement(A.Flex, {
     center: true,
     column: true
-  }, _react["default"].createElement(_boxSystemProfilesViews.ProfileImage, props.styled)));
+  }, _react["default"].createElement(_boxUiProfilesStateless.ProfileImage, props.styled)));
 };
 
 Avatar.defaultProps = {};
 
 var _default = function _default(props) {
-  return _react["default"].createElement(_boxReactState.BoxInject, null, _react["default"].createElement(Avatar, props));
+  return _react["default"].createElement(_boxUiState.BoxInject, null, _react["default"].createElement(Avatar, props));
 };
 
 exports["default"] = _default;

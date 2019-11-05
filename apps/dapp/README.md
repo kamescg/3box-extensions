@@ -1,7 +1,7 @@
-# 3Box Dev
-The 3Box Dev module is an experiment to understand the limits of 3Box in an a modern React environment.
+# 3Box Extensions
+The 3Box Extensions module is an experiment to understand the limits of 3Box in an a modern React environment.
 
-Simplifying the steps required to add decentralized authentication, storage and messaging. The 3Box Dev repo is split into a monorepo to simplify module development and experimentation. The primary modules to get started are the `3box-ui-state` and `3box-ui-system` package, simplifying initializing a state provider and a components to interface between user interaction and the underlying `3box.js` methods.
+Simplifying the steps required to add decentralized authentication, storage and messaging. The 3Box Extensions repo is split into a monorepo to simplify module development and experimentation. The primary modules to get started are the `3box-ui-state` and `3box-ui-system` package, simplifying initializing a state provider and a components to interface between user interaction and the underlying `3box.js` methods.
 
 ## Resources
 Before getting started with this repo, please reference the 3Box documentation and libraries.
@@ -10,8 +10,8 @@ Before getting started with this repo, please reference the 3Box documentation a
 
 ## Major Packages
 - 3Box UI State (3box-ui-state)
-- 3Box Dev (3box-ui-system)
-- 3Box Dev Render (3box-ui-system-render)
+- 3Box Extensions (3box-ui-system)
+- 3Box Extensions Render (3box-ui-system-render)
 - 3Box UI Profiles (3box-ui-profiles)
 - 3Box UI Profiles Stateless (3box-ui-profiles-stateless)
 
@@ -32,7 +32,7 @@ More developer documentation coming soon.
 - [ ] Add Complete UI System
 - [ ] Add Plugin System
 
-## 3Box Dev Examples
+## 3Box Extensions Examples
 Below is small sample of components to help enable rapid development.
 
 

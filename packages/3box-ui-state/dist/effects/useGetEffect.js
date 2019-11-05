@@ -33,18 +33,17 @@ var useGetEffect = (state, dispatch) => {
               var read;
 
               if (space) {
-                read = yield state.spaces[space].instance[access].get(key);
+                read = yield state.auth.spaces[space].instance[access].get(key);
                 dispatch({
                   type: 'GET_SUCCESS',
-                  id: key,
-                  access: access || 'public',
+                  key,
+                  access,
                   space,
                   payload: read
                 });
                 setDispatched(true);
               } else {
                 read = yield state.instance[access].get(key);
-                console.log(read, 'readread');
                 dispatch({
                   type: 'GET_SUCCESS',
                   key,

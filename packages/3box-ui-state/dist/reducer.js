@@ -31,10 +31,14 @@ var _default = (state, action) => {
       return _dotPropImmutableChain.default.set(state, 'isEnableSuccess', false);
 
     case 'SET_ADDRESS':
-      return _objectSpread({}, state, {}, action);
+      return _objectSpread({}, state, {
+        address: action.address,
+        addressShortened: action.addressShortened,
+        addressTrimmed: action.addressTrimmed
+      });
 
     case 'SET_PROFILE':
-      return _dotPropImmutableChain.default.set(state, 'profile', action.profile);
+      return _dotPropImmutableChain.default.set(state, "@.".concat(state.address, ".profile"), action.profile);
 
     /* ======================= */
 
@@ -46,7 +50,7 @@ var _default = (state, action) => {
 
     case 'GET_PROFILE_SUCCESS':
       return (0, _dotPropImmutableChain.default)(state).set("@.".concat(action.address, ".profile"), action.payload) // New path
-      .set("store.profiles", state.store.profiles.filter(i => i.address !== action.address)).value();
+      .value();
 
     case 'GET_PROFILE_LIST_REQUEST':
       return _objectSpread({}, state, {
@@ -58,8 +62,8 @@ var _default = (state, action) => {
       });
 
     case 'GET_PROFILE_LIST_SUCCESS':
-      return (0, _dotPropImmutableChain.default)(state).set("profiles.".concat(action.address), action.payload) // Deprecated path
-      .set("data.profiles.".concat(action.address), action.payload) // New path
+      return (0, _dotPropImmutableChain.default)(state) // .set(`profiles.${action.address}`, action.payload) // Deprecated path
+      // .set(`data.profiles.${action.address}`, action.payload) // New path
       .set("store.profiles", []).value().value();
 
     /* ======================= */
@@ -75,7 +79,7 @@ var _default = (state, action) => {
 
     case 'OPEN_SUCCESS':
       return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".profile"), action.profile) // New path
-      .set("auth.profile", action.profile).set("auth.verifications", action.verifications).set("auth.spaces", action.spaces).set("auth.instance", action.instance).set("instance", action.instance).set("isLogginIn", false).set("isLoggedIn", true).value();
+      .set("auth.verifications", action.verifications).set("auth.spaces", action.spaces).set("auth.instance", action.instance).set("instance", action.instance).set("isLogginIn", false).set("isLoggedIn", true).value();
 
     case 'OPEN_FAILURE':
       return state;
@@ -120,7 +124,7 @@ var _default = (state, action) => {
     case 'GET_SPACE_SUCCESS':
       return (0, _dotPropImmutableChain.default)(state).set("spaces.".concat(action.space, ".").concat(action.access), action.payload) // Deprecated path
       .set("data.spaces.".concat(action.address, ".").concat(action.space, ".").concat(action.access), action.payload) // Maybe path
-      .set("@.".concat(action.address, ".spaces.").concat(action.space), action.payload) // New path
+      .set("@.".concat(action.address, ".spaces.").concat(action.space, ".").concat(action.access), {}) // New path
       .set("store.spaces", []).value();
 
     case 'GET_SPACE_FAILURE':
@@ -137,9 +141,7 @@ var _default = (state, action) => {
 
     case 'GET_SUCCESS':
       if (action.space) {
-        return (0, _dotPropImmutableChain.default)(state).set("spaces.".concat(action.space, ".").concat(action.access, ".").concat(action.id), action.payload) // Deprecated path
-        .set("data.spaces.".concat(action.space, ".").concat(action.access, ".").concat(action.id), action.payload) // New path
-        .set("store.gets", []).value();
+        return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".spaces.").concat(action.space, ".").concat(action.access, ".").concat(action.key), action.payload).set("store.gets", []).value();
       } else {
         return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".profile.").concat(action.key), action.payload).set("auth.profile.".concat(action.key), action.payload).set("store.gets", []).value();
       }
@@ -161,24 +163,6 @@ var _default = (state, action) => {
     case 'SET_FAILURE':
       return (0, _dotPropImmutableChain.default)(state).set("store.sets", []).value();
 
-    case 'SET_MERGE_REQUEST':
-      return (0, _dotPropImmutableChain.default)(state).set("store.sets", [...state.store.sets, action]).value();
-
-    case 'SET_MERGE_SUCCESS':
-      return (0, _dotPropImmutableChain.default)(state).set("profile.".concat(action.index), action.payload).set("@.".concat(state.address, ".profile.").concat(action.index), action.payload).set("auth.profile.".concat(action.index), action.payload).set("store.sets", []).value();
-
-    case 'SET_MERGE_FAILURE':
-      return (0, _dotPropImmutableChain.default)(state).set("store.sets", []).value();
-
-    case 'SET_INSERT_REQUEST':
-      return (0, _dotPropImmutableChain.default)(state).set("store.sets", [...state.store.sets, action]).value();
-
-    case 'SET_INSERT_SUCCESS':
-      return (0, _dotPropImmutableChain.default)(state).set("profile.".concat(action.index), action.payload).set("auth.profile.".concat(action.index), action.payload).set("store.sets", []).value();
-
-    case 'SET_INSERT_FAILURE':
-      return (0, _dotPropImmutableChain.default)(state).set("store.sets", []).value();
-
     case 'SET_SINGLE_REQUEST':
       return (0, _dotPropImmutableChain.default)(state).set("store.sets", [...state.store.sets, action]).value();
 
@@ -197,6 +181,19 @@ var _default = (state, action) => {
     case 'SET_MULTIPLE_FAILURE':
       return (0, _dotPropImmutableChain.default)(state).set("store.sets", []).value();
 
+    case 'SET_MERGE_REQUEST':
+      return (0, _dotPropImmutableChain.default)(state).set("store.sets", [...state.store.sets, action]).value();
+
+    case 'SET_MERGE_SUCCESS':
+      if (!action.space) {
+        return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".profile.").concat(action.index), action.payload).set("store.sets", []).value();
+      } else {
+        return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".spaces.").concat(action.space, ".").concat(action.access, ".").concat(action.key), action.payload).set("store.sets", []).value();
+      }
+
+    case 'SET_MERGE_FAILURE':
+      return (0, _dotPropImmutableChain.default)(state).set("store.sets", []).value();
+
     /* ------------------ */
 
     /* Insert
@@ -206,8 +203,13 @@ var _default = (state, action) => {
       return (0, _dotPropImmutableChain.default)(state).set("store.inserts", [...state.store.inserts, action]).value();
 
     case 'INSERT_SUCCESS':
-      return (0, _dotPropImmutableChain.default)(state).set("store.inserts", []) // Reset Store
-      .set("@.".concat(state.address.toLowerCase(), ".spaces.").concat(action.space, ".").concat(action.index), action.payload).set("auth.spaces.".concat(action.space, ".").concat(action.index), action.payload).value();
+      if (!action.space) {
+        return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".profile.").concat(action.index), action.payload).set("store.inserts", []) // Reset Store
+        .value();
+      } else {
+        return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".spaces.").concat(action.space, ".").concat(action.access, ".").concat(action.index), action.payload).set("store.inserts", []) // Reset Store
+        .value();
+      }
 
     case 'INSERT_FAILURE':
       return (0, _dotPropImmutableChain.default)(state).set("store.inserts", []).value();
@@ -237,7 +239,11 @@ var _default = (state, action) => {
       return (0, _dotPropImmutableChain.default)(state).set("store.deletes", [...state.store.deletes, action]).value();
 
     case 'DELETE_SUCCESS':
-      return (0, _dotPropImmutableChain.default)(state).set("store.deletes", []).set("profile.".concat(action.index), action.payload).set("@.".concat(state.address, ".profile.").concat(action.index), action.payload).value();
+      if (!action.space) {
+        return (0, _dotPropImmutableChain.default)(state).set("store.deletes", []).set("@.".concat(state.address, ".profile.").concat(action.index), action.payload).value();
+      } else {
+        return (0, _dotPropImmutableChain.default)(state).set("store.deletes", []).set("@.".concat(state.address, ".spaces.").concat(action.space, ".").concat(action.index), action.payload).value();
+      }
 
     case 'DELETE_FAILURE':
       return (0, _dotPropImmutableChain.default)(state).set("store.deletes", []).value();

@@ -4,7 +4,7 @@ import { ThreadJoin } from '3box-ui-system'
 const ReferenceExample = props => {
   return (
     <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
+      <Atom.Flex alignCenter sx={{ bg: 'neutral', color: 'text', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{ width: '40%', p:4 }}>
           <Atom.Heading md heavy>Reference Lookup</Atom.Heading>
           <Atom.Paragraph>

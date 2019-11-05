@@ -1,23 +1,21 @@
+import { useState, useEffect } from 'react'
+import {CodeCard} from '@horizin/design-system-molecules'
 import {
-  Login,
   MessagePost,
-  SpaceOpen,
-  StorageSet,
-  ThreadJoin,
   AccessThread
 } from '3box-ui-system'
+import { FormThreadPostPublish} from 'forms'
 
 
-import { 
-  FormThreadPostPublish
-} from 'forms'
-import { useState, useEffect } from 'react'
 
+export default () =>
+<CodeCard
+  title='Storage Remove'
+  summary='Publish a message to a 3Box thread.'
+  example={<ThreadPostForm />}
+  code={CodeExampleString}
+/>
 
-/**
- * @function ThreadPostForm
- * @param {*} props 
- */
 const ThreadPostForm = props => { 
   const [ values, setValues ] = useState()
   const [ isMessagePostSuccess, setThreadPostCallback ] = useState()  
@@ -49,25 +47,8 @@ const ThreadPostForm = props => {
   </>
 )}
 
-const ThreadPostPublishExample = props => {
-  return (
-    <Atom.Container my={3}>
-    <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
-      <Atom.Flex column flex={2} sx={{p: 4}}>
-
-        <Atom.Heading md heavy>Thread Post Publish</Atom.Heading>
-        <Atom.Paragraph>
-          Publish a message to a 3Box thread.
-        </Atom.Paragraph>
-
-        <ThreadPostForm />
-
-      </Atom.Flex>
-      <Atom.Flex flex={3} width={'60%'}>
-        <Atom.Box gradient='gray' sx={{ p: 3, px: 4, width: '100%' }}>
-          <code>
-            <pre>
-              {`
+const CodeExampleString = (
+  `
 import React from 'react'
 import { ThreadPostDelete } from '3box-ui-system'
 export default props => (
@@ -78,15 +59,5 @@ export default props => (
   }
 />
 )
-`}
-            </pre>
-          </code>
-        </Atom.Box>
-      </Atom.Flex>
-    </Atom.Flex>
-  </Atom.Container>
-  )
-}
-
-
-export default ThreadPostPublishExample
+`
+)

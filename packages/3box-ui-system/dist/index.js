@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "BoxContext", {
   enumerable: true,
   get: function get() {
-    return _boxReactState.BoxContext;
+    return _boxUiState.BoxContext;
   }
 });
 Object.defineProperty(exports, "BoxProvider", {
   enumerable: true,
   get: function get() {
-    return _boxReactState.BoxProvider;
+    return _boxUiState.BoxProvider;
   }
 });
 Object.defineProperty(exports, "effects", {
@@ -238,7 +238,7 @@ Object.defineProperty(exports, "ProfileRetrieve", {
   }
 });
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _effects = _interopRequireDefault(require("./api/effects"));
 

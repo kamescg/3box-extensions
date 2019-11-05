@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -65,6 +65,6 @@ var BoxThreadPostDelete = (_ref) => {
   }, "Delete Post") : null;
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(BoxThreadPostDelete, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(BoxThreadPostDelete, props));
 
 exports.default = _default;

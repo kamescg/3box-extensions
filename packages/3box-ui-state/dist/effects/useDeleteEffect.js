@@ -34,7 +34,7 @@ var useDeleteEffect = (state, dispatch) => {
               var read, write;
 
               if (space) {
-                read = state.auth.spaces[space][access][index];
+                read = state['@'][state.address].spaces[space][access][index];
                 delete read[key];
                 write = yield state.spaces[space].instance[access].set(index, read);
               } else {

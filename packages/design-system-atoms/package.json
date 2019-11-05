@@ -32,7 +32,11 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
+    "@styled-system/color": "^5.1.2",
+    "@styled-system/should-forward-prop": "^5.1.2",
+    "@styled-system/space": "^5.1.2",
     "idx": "^2.5.6",
+    "styled-system": "^5.1.2",
     "theme-ui": "^0.2.44"
   },
   "eslintConfig": {

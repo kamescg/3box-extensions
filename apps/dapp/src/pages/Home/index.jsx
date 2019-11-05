@@ -16,20 +16,21 @@ import {
   ThreadPostPublishExample
 } from 'content/examples'
 
+import { Card } from '@horizin/design-system-atoms'
 const showcase = {
   title: 'Web3 Identity Made Easy',
-  tagline: 'Compose Authentication, Storage and Messaging features together via 3Box Dev.',
+  tagline: 'Compose Authentication, Storage and Messaging features together via 3Box Extensions.',
 }
 
 /* --- Component --- */
 const Home = props =>
-  <Site sx={{ bg: 'smoke' }} sxMain={{ alignItems: 'center', justifyContent: 'center' }}>
+  <Site sx={{ bg: 'paper', color: 'text' }} sxMain={{ alignItems: 'center', justifyContent: 'center' }}>
     <Molecule.Card
       layout='showcase'
       variants={['large', 'centered']}
       sx={{
         p: 3,
-        py: 6,
+        py: 4,
       }}
       sxTitle={{
         fontWeight: 700
@@ -44,7 +45,6 @@ const Home = props =>
       image={null}
     />
     <Atom.Span variants={['tag']} effects={['white']}>Rapidly build social decentralized applications.</Atom.Span>
-
     <Atom.Container maxWidth={980} sx={{ my: 5 }}>
       <ModuleFeatured
         url='/3box-ui-system-render'

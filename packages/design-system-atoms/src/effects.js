@@ -86,10 +86,9 @@ return style
 export const useGradientEffect = (props) => {
   const theme = useContext(ThemeContext)
   const [ gradient, setGradient ] = useState()
-  
   useEffect( () => { 
     if(props.gradient)
-    setGradient(`linear-gradient(180deg , ${idx(theme, _ => _.gradient[props.gradient])})`)
+    setGradient(`linear-gradient(180deg , ${idx(theme, _ => _.gradients[props.gradient])})`)
   }, [props.gradient])
 
 return gradient

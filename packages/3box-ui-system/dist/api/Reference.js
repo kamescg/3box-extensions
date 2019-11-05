@@ -11,7 +11,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _Component = _interopRequireDefault(require("../helpers/Component"));
 
@@ -87,7 +87,7 @@ Reference.propTypes = {
   canRequestData: _propTypes.default.bool
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxContext, null, box => _react.default.createElement(Reference, _extends({
+var _default = props => _react.default.createElement(_boxUiState.BoxContext, null, box => _react.default.createElement(Reference, _extends({
   box: box
 }, props)));
 

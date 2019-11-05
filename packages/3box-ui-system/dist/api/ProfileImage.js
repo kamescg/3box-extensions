@@ -26,18 +26,19 @@ var _default = props => _react.default.createElement(DID.Context, null, box => _
   boxShadow: 0,
   p: 2,
   sx: _objectSpread({
-    border: "2px solid #FFF",
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderColor: 'white',
     borderRadius: 9999,
+    maxWidth: 70,
+    height: 48,
+    width: 48,
     overflow: 'hidden'
-  }, props.sx),
-  width: 36,
-  height: 36,
-  maxWidth: 48,
-  maxWidth: 48
-}, props), box.profile && box.profile.image ? _react.default.createElement(A.BackgroundImage, {
+  }, props.sx)
+}, props), box['@'][box.address] && box['@'][box.address].profile && box['@'][box.address].profile.image ? _react.default.createElement(A.BackgroundImage, {
   ratio: .5,
   circle: true,
-  src: (0, _utilities.GenerateImage)(box.profile.image)
+  src: (0, _utilities.GenerateImage)(box['@'][box.address].profile.image)
 }) : _react.default.createElement(A.BackgroundImage, {
   ratio: .5,
   circle: true,

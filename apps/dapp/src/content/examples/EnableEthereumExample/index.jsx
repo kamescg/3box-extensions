@@ -2,24 +2,18 @@ import {
   EnableEthereum,
 } from '3box-ui-system'
 
+import { CodeCard } from '@horizin/design-system-molecules'
 
-const EnableEthereumExample = props => {
-  return (
-    <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
-        <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy>Enable Etheruem</Atom.Heading>
-          <Atom.Paragraph>
-            Request permissions from the environment wallet.
-      </Atom.Paragraph>
-          <EnableEthereum />
-        </Atom.Flex>
-        <Atom.Flex flex={3}>
-          <Atom.Box gradient='gray' sx={{ p: 3, px: 4, width: '100%' }}>
-            <code>
-              <pre>
-                {
-                  `import React from 'react'
+const EnableEthereumExample = props =>
+<CodeCard
+  title='Enable Ethereum Provider'
+  summary='Request permissions from the environment wallet.'
+  example={<EnableEthereum />}
+  code={CodeExampleString}
+/>
+
+const CodeExampleString = (
+`import React from 'react'
 import { EnableEtheruem } from '3box-ui-system'
 export default props =>(
   <EnableEtheruem
@@ -28,14 +22,7 @@ export default props =>(
     componentIsConnected={CustomComponent}
   />
 )
-`}
-              </pre>
-            </code>
-          </Atom.Box>
-        </Atom.Flex>
-      </Atom.Flex>
-    </Atom.Container>
-  )
-}
+`
+)
 
 export default EnableEthereumExample

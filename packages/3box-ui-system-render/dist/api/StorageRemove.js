@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -40,6 +40,6 @@ StorageRemove.defaultProps = {
 };
 StorageRemove.propTypes = {};
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(StorageRemove, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(StorageRemove, props));
 
 exports.default = _default;

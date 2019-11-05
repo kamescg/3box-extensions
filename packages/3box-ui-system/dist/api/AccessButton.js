@@ -9,13 +9,11 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _effects = require("./effects");
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
-
-var _component = require("./component");
 
 var _Login = _interopRequireDefault(require("./Login"));
 
@@ -80,7 +78,7 @@ var AccessButton = (_ref) => {
    */
 
   (0, _react.useEffect)(() => {
-    if (!props.space && !props.threadName) setDisabledLabel('login');
+    if (!props.space && !props.threadName) setDisabledLabel('Authentication Required');
     if (props.space && !props.threadName) setDisabledLabel("open ".concat(props.space, " space"));
     if (props.space && props.threadName) setDisabledLabel("join ".concat(props.threadName, " thread"));
   }, [props]);
@@ -104,7 +102,7 @@ AccessButton.propTypes = {
   isLoginDisabled: _propTypes.default.bool
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxContext, null, box => _react.default.createElement(AccessButton, _extends({
+var _default = props => _react.default.createElement(_boxUiState.BoxContext, null, box => _react.default.createElement(AccessButton, _extends({
   box: box
 }, props)));
 

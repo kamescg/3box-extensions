@@ -5,7 +5,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Atom from '@horizin/design-system-atoms'
+import { Flex} from '@horizin/design-system-atoms'
 
 import { useCardEffect } from '../effects'
 
@@ -39,7 +39,7 @@ const Card = ({ as, children, ...props }) => {
   }, [props.sxd])
 
   return (
-    <Atom.Flex column sx={{
+    <Flex column sx={{
       ...card,
       ...sx
       }}>
@@ -51,7 +51,7 @@ const Card = ({ as, children, ...props }) => {
 
       {/* Footer */}
       {render.footer}
-    </Atom.Flex>
+    </Flex>
   )
 }
 

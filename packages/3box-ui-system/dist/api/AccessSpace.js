@@ -7,7 +7,9 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
+
+var _uiCompose = require("@horizin/ui-compose");
 
 var _effects = require("./effects");
 
@@ -39,14 +41,16 @@ var AccessSpaces = (_ref) => {
 
   var login = (0, _effects.useOpenRequestEffect)(box);
   var space = (0, _effects.useSpaceReadyEffect)(box, props);
-  return _react.default.createElement(_react.default.Fragment, null, login.isLoggedIn ? null : _react.default.createElement(_Login.default, props), login.isLoggedIn && !space.ready ? _react.default.createElement(_SpaceOpen.default, {
+  return _react.default.createElement(_react.default.Fragment, null, login.ready ? null : props.componentIsLoggedOut, login.isLoggedIn && !space.ready ? (0, _uiCompose.Component)(props.componentIsLoggedIn, {
     space: props.space,
-    auto: props.spaceAuto
+    auto: props.auto
   }) : null, login.isLoggedIn && space.ready ? props.children : null);
 };
 
 AccessSpaces.defaultProps = {
   componentLogin: _react.default.createElement(_Login.default, null),
+  componentIsLoggedOut: _react.default.createElement(_Login.default, null),
+  componentIsLoggedIn: _SpaceOpen.default,
   loginAuto: false,
   spaceAuto: false,
   threadAuto: false,
@@ -56,7 +60,7 @@ AccessSpaces.propTypes = {
   space: PropTypes.string
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxContext, null, box => _react.default.createElement(AccessSpaces, _extends({
+var _default = props => _react.default.createElement(_boxUiState.BoxContext, null, box => _react.default.createElement(AccessSpaces, _extends({
   box: box
 }, props)));
 

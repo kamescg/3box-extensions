@@ -49,10 +49,10 @@ const Login = ({ sxLoggedOut, sxLoading, sxLoggedIn, box, ...props }) => {
 
 Login.defaultProps = {
   componentIsLoggedOut: (
-    <Span variants={['tag']} effects={['white', 'pointer']} >Login</Span>
+    <Span tag pointer >Login</Span>
     ),
   componentIsLoading: (
-    <Span variants={['tag']} effects={['white']} >Loading</Span>
+    <Span tag pointer >Loading</Span>
   ),
   componentIsLoggedIn:(
     <Span ><Avatar /></Span>

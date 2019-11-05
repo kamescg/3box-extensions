@@ -12,7 +12,7 @@ const Login = ({ box, ...props }) => {
   return (
     <>
     {
-      <span onClick={box.enable} >
+      <span onClick={box.login} >
         {
           !login.isDispatched && !login.isLoggedIn
           ? !React.isValidElement(props.componentIsLoggedOut)
@@ -50,13 +50,13 @@ const Login = ({ box, ...props }) => {
 
 Login.defaultProps = {
   componentIsLoggedOut: (
-    <Button variants={['button']} effects={['blue', 'pointer']} >3Box</Button>
+    <Button >3Box</Button>
     ),
   componentIsLoading: (
-    <Button variants={['button']} effects={['white']} >3Box Loading</Button>
+    <Button  >3Box Loading</Button>
   ),
   componentIsLoggedIn:(
-    <Button variants={['button']} effects={['white', 'pointer']} >3Box Active</Button>
+    <Button >3Box Active</Button>
     )
 }
 

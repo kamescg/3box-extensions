@@ -24,7 +24,7 @@ var useJoinThreadEffect = (state, dispatch) => {
     if (state.store && state.store.threads) {
       var selected = state.store.threads[0];
 
-      if (selected && state.spaces && state.auth.spaces[selected.space].instance) {
+      if (selected && state.spaces && state.auth.spaces[selected.space] && state.auth.spaces[selected.space].instance) {
         try {
           var runEffect =
           /*#__PURE__*/

@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _effects = require("./effects");
 
@@ -68,7 +68,7 @@ AccessThread.propTypes = {
   space: PropTypes.string
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxContext, null, box => _react.default.createElement(AccessThread, _extends({
+var _default = props => _react.default.createElement(_boxUiState.BoxContext, null, box => _react.default.createElement(AccessThread, _extends({
   box: box
 }, props)));
 

@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _uiCompose = require("@horizin/ui-compose");
 
@@ -31,7 +31,7 @@ var StorageRender = (_ref) => {
   } = _ref,
       props = _objectWithoutProperties(_ref, ["box"]);
 
-  var storage = _boxReactState.Effects.useStorageRetrieveEffect(box, props);
+  var storage = _boxUiState.Effects.useStorageRetrieveEffect(box, props);
 
   return !storage.data ? null : props.isList ? _react.default.createElement(_uiCompose.ListObjectValues, {
     data: storage.data,
@@ -54,6 +54,6 @@ StorageRender.propTypes = {
   space: _propTypes.default.string
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(StorageRender, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(StorageRender, props));
 
 exports.default = _default;

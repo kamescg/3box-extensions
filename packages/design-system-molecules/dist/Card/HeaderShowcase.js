@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _designSystemAtoms = _interopRequireDefault(require("@horizin/design-system-atoms"));
+var _designSystemAtoms = require("@horizin/design-system-atoms");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* eslint-disable react-hooks/exhaustive-deps */
 var FooterDefault = props => {
-  return _react.default.createElement(_designSystemAtoms.default.BackgroundImage, {
+  return _react.default.createElement(_designSystemAtoms.BackgroundImage, {
     ratio: .2,
     opacity: .3,
     src: props.imageCover

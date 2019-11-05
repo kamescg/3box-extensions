@@ -9,7 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _ethereumBlockiesBase = _interopRequireDefault(require("ethereum-blockies-base64"));
 
@@ -103,6 +103,6 @@ BoxLoginButton.defaultProps = {
   auto: false
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(BoxLoginButton, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(BoxLoginButton, props));
 
 exports.default = _default;

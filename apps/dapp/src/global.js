@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: '3Box Dev',
+  siteName: '3Box Extensions',
   contact: {
     email: 'info@kamescg.com',
     twitter: '@kamescg',

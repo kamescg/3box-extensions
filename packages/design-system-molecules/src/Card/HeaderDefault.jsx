@@ -4,15 +4,15 @@
  */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
-import Atom from '@horizin/design-system-atoms'
+import { Blockquote, Container, BackgroundGradient, BackgroundImage, Flex, Heading, Span} from '@horizin/design-system-atoms'
 
 const FooterDefault = props => {
 
   return (
     props.imageCover
-      ? <Atom.Flex width='100%' sx={{ ...props.sxHeaderDefault, ...props.sxHeader }}>
-        <Atom.BackgroundImage opacity={.3} src={props.imageCover} />
-      </Atom.Flex>
+      ? <Flex width='100%' sx={{ ...props.sxHeaderDefault, ...props.sxHeader }}>
+        <BackgroundImage opacity={.3} src={props.imageCover} />
+      </Flex>
       : null
   )
 }

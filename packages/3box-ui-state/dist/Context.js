@@ -23,17 +23,7 @@ var Context = (0, _react.createContext)({
   // Authentiation data storage.
   '@': {},
   auth: {
-    profile: {},
-    threads: {},
-    spaces: {}
-  },
-  // Global Configuration
-  config: {
-    cms: {}
-  },
-  // General data storage.
-  data: {
-    profiles: {},
+    instance: undefined,
     spaces: {},
     threads: {}
   },
@@ -87,7 +77,7 @@ var Context = (0, _react.createContext)({
 
   /* --- Functions --- */
   enable: () => {},
-  open: () => {},
+  login: () => {},
   logout: () => {},
   addRequest: () => {},
   confirmRequest: () => {},

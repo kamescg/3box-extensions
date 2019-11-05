@@ -9,7 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _effects = require("./effects");
 
@@ -47,6 +47,6 @@ var ThreadListen = (_ref) => {
 ThreadListen.defaultProps = {};
 ThreadListen.propTypes = {};
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(ThreadListen, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(ThreadListen, props));
 
 exports.default = _default;

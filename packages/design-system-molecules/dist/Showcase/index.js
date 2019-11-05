@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _designSystemAtoms = _interopRequireDefault(require("@horizin/design-system-atoms"));
+var _designSystemAtoms = require("@horizin/design-system-atoms");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23,25 +23,25 @@ var Showcase = (_ref) => {
   } = _ref,
       props = _objectWithoutProperties(_ref, ["as", "sx", "children"]);
 
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_designSystemAtoms.default.Flex, {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_designSystemAtoms.Flex, {
     center: true,
     column: true,
     sx: sx,
     position: "relative"
-  }, _react.default.createElement(_designSystemAtoms.default.BackgroundImage, {
+  }, _react.default.createElement(_designSystemAtoms.BackgroundImage, {
     opacity: 1,
     src: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
-  }), _react.default.createElement(_designSystemAtoms.default.BackgroundGradient, {
+  }), _react.default.createElement(_designSystemAtoms.BackgroundGradient, {
     gradient: "blue",
     opacity: .74
-  }), _react.default.createElement(_designSystemAtoms.default.Container, null, _react.default.createElement(_designSystemAtoms.default.Heading, {
+  }), _react.default.createElement(_designSystemAtoms.Container, null, _react.default.createElement(_designSystemAtoms.Heading, {
     giga: true,
     as: "h5"
-  }, props.title), _react.default.createElement(_designSystemAtoms.default.Heading, {
+  }, props.title), _react.default.createElement(_designSystemAtoms.Heading, {
     md: true,
     heavy: true,
     mb: 6
-  }, props.tagline), _react.default.createElement(_designSystemAtoms.default.Blockquote, {
+  }, props.tagline), _react.default.createElement(_designSystemAtoms.Blockquote, {
     sx: {
       m: 0
     }

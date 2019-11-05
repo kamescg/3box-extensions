@@ -11,7 +11,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _Component = _interopRequireDefault(require("../helpers/Component"));
 
@@ -96,6 +96,6 @@ ProfileSelector.propTypes = {
   selector: _propTypes.default.string
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(ProfileSelector, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(ProfileSelector, props));
 
 exports.default = _default;

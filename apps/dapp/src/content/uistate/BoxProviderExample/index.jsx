@@ -6,7 +6,7 @@ import {
 const InitProviderExample = props => {
   return (
     <Atom.Container my={3} maxWidth={780}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
+      <Atom.Flex alignCenter sx={{ bg: 'neutral', color: 'text', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
           <Atom.Heading md heavy>Initialize The Provider</Atom.Heading>
           <Atom.Paragraph>

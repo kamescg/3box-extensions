@@ -9,7 +9,7 @@ var _idx = _interopRequireDefault(require("idx"));
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
@@ -123,6 +123,6 @@ var ProfileCard = (_ref2) => {
   })));
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(BoxProfileRetrieve, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(BoxProfileRetrieve, props));
 
 exports.default = _default;

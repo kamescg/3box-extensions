@@ -9,7 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _designSystemAtoms = _interopRequireDefault(require("@horizin/design-system-atoms"));
+var _designSystemAtoms = require("@horizin/design-system-atoms");
 
 var _effects = require("../effects");
 
@@ -59,7 +59,7 @@ var Card = (_ref) => {
       }
     }
   }, [props.sxd]);
-  return _react.default.createElement(_designSystemAtoms.default.Flex, {
+  return _react.default.createElement(_designSystemAtoms.Flex, {
     column: true,
     sx: _objectSpread({}, card, {}, sx)
   }, render.header, render.main, render.footer);

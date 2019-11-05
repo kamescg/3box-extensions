@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _effects = require("./effects");
 
@@ -50,7 +50,7 @@ AccessLogin.propTypes = {
   isLoginDisabled: _propTypes.default.bool
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxContext, null, box => _react.default.createElement(AccessLogin, _extends({
+var _default = props => _react.default.createElement(_boxUiState.BoxContext, null, box => _react.default.createElement(AccessLogin, _extends({
   box: box
 }, props)));
 

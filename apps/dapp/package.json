@@ -1,7 +1,7 @@
 {
   "name": "3box-extensions",
   "author": "Kames <info@kamescg.com>",
-  "homepage": "https://3box-dev.netlify.com/",
+  "homepage": "https://kamescg.github.io/3box-extensions",
   "description": "Extending the 3Box Universe",
   "private": false,
   "version": "0.0.1",
@@ -11,13 +11,14 @@
     "test": "node scripts/test.js",
     "lint": "eslint ./src/**/*.js --max-warnings=0 --format=codeframe",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build -b build"
+    "deploy": "gh-pages -d build",
+    "triggerDeploy": "git checkout -b gh-pages ; git commit -m 'rebuild' --allow-empty"
   },
   "dependencies": {
-    "3box-ui-state": "^0.0.1",
-    "3box-ui-system": "^0.0.1",
     "3box-ui-profiles": "^0.0.1",
     "3box-ui-profiles-stateless": "^0.0.1",
+    "3box-ui-state": "^0.0.1",
+    "3box-ui-system": "^0.0.1",
     "@horizin/design-system-atoms": "^0.0.1",
     "@horizin/design-system-molecules": "^0.0.1",
     "@horizin/design-system-organisms": "^0.0.1",
@@ -92,11 +93,11 @@
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.3",
     "url-loader": "1.1.2",
-    "yarn": "^1.19.1",
     "webpack": "4.29.6",
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "4.2.0"
+    "workbox-webpack-plugin": "4.2.0",
+    "yarn": "^1.19.1"
   },
   "browserslist": {
     "production": [

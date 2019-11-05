@@ -9,7 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _designSystemAtoms = _interopRequireDefault(require("@horizin/design-system-atoms"));
+var _designSystemAtoms = require("@horizin/design-system-atoms");
 
 var _designSystemMolecules = require("@horizin/design-system-molecules");
 
@@ -258,29 +258,29 @@ var ComponentMainDefault = props => {
 
     setSXImageWrap(_objectSpread({}, styleWrap));
   }, [props.variantsImage]);
-  return _react.default.createElement(_designSystemAtoms.default.Flex, {
+  return _react.default.createElement(_designSystemAtoms.Flex, {
     sx: _objectSpread({
       flexDirection: 'column'
     }, sxMain)
-  }, _react.default.createElement(_designSystemAtoms.default.Flex, {
+  }, _react.default.createElement(_designSystemAtoms.Flex, {
     sx: props.sxDetails
-  }, props.image && _react.default.createElement(_designSystemAtoms.default.Span, {
+  }, props.image && _react.default.createElement(_designSystemAtoms.Span, {
     sx: _objectSpread({}, sxImageWrap)
-  }, _react.default.createElement(_designSystemAtoms.default.Image, {
+  }, _react.default.createElement(_designSystemAtoms.Image, {
     src: props.image,
     sx: sxImage
-  })), _react.default.createElement(_designSystemAtoms.default.Box, null, props.title && _react.default.createElement(_designSystemAtoms.default.Heading, {
+  })), _react.default.createElement(_designSystemAtoms.Box, null, props.title && _react.default.createElement(_designSystemAtoms.Heading, {
     sx: sxTitle
   }, props.isTitleLink && props.to ? _react.default.createElement(_designSystemMolecules.Link, {
     to: "".concat(props.toPrefix).concat(props.to)
-  }, props.title) : props.title), props.tagline && _react.default.createElement(_designSystemAtoms.default.Heading, {
+  }, props.title) : props.title), props.tagline && _react.default.createElement(_designSystemAtoms.Heading, {
     md: true,
     heavy: true,
     sx: sxTagline
-  }, props.tagline))), props.summary && _react.default.createElement(_designSystemAtoms.default.Text, {
+  }, props.tagline))), props.summary && _react.default.createElement(_designSystemAtoms.Text, {
     as: "p",
     sx: sxSummary
-  }, props.summary), props.content && _react.default.createElement(_designSystemAtoms.default.Text, {
+  }, props.summary), props.content && _react.default.createElement(_designSystemAtoms.Text, {
     sx: sxContent
   }, props.content), props.actions && props.actions, props.isLinkInsert && _react.default.createElement(_designSystemMolecules.Link, _extends({
     to: "".concat(props.toPrefix).concat(props.to)

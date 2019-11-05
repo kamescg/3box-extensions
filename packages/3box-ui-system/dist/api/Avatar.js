@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _ProfileImage = _interopRequireDefault(require("./ProfileImage"));
 
@@ -32,8 +32,6 @@ var Avatar = (_ref) => {
   });
 };
 
-Avatar.defaultProps = {};
-
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(Avatar, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(Avatar, props));
 
 exports.default = _default;

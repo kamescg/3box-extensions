@@ -3,7 +3,7 @@ import { Site } from 'templates'
 
 const showcase = {
   title: 'Get Setup.',
-  tagline: 'Installing 3Box Dev and Contributing.',
+  tagline: 'Installing 3Box Extensions and Contributing.',
 }
 
 /* --- Component --- */
@@ -36,9 +36,9 @@ export default Home
 const Install3BoxExtensions = props => {
   return (
     <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
+      <Atom.Flex alignCenter sx={{ bg: 'neutral', color: 'text', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box Dev</Atom.Heading>
+          <Atom.Heading md heavy m={0}>3Box Extensions</Atom.Heading>
           <Atom.Paragraph m={0}>
             Project currently under rapid development.
           </Atom.Paragraph>

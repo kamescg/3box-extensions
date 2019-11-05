@@ -15,7 +15,6 @@ import {
 import { Button } from '@horizin/design-system-atoms'
 
 /* --- Local --- */
-import { Component } from './component'
 import Login from './Login'
 import { Avatar } from '..'
 
@@ -66,7 +65,7 @@ const AccessButton = ({ box, children, ...props }) => {
   useEffect( () => { 
     
     if(!props.space && !props.threadName)
-      setDisabledLabel('login')
+      setDisabledLabel('Authentication Required')
     if(props.space && !props.threadName)
       setDisabledLabel(`open ${props.space} space`)
     if(props.space && props.threadName)

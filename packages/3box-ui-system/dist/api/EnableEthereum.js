@@ -9,7 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _effects = require("./effects");
 
@@ -37,22 +37,21 @@ var EnableEthereum = (_ref) => {
 
 EnableEthereum.defaultProps = {
   componentIsDisconnected: _react.default.createElement(_designSystemAtoms.Span, {
-    variants: ['tag'],
-    effects: ['white', 'pointer']
+    tag: true,
+    pointer: true
   }, "Enable"),
   componentIsLoading: _react.default.createElement(_designSystemAtoms.Span, {
-    variants: ['tag'],
-    effects: ['white']
+    tag: true
   }, "Loading"),
   componentIsConnected: _react.default.createElement(_designSystemAtoms.Span, {
-    variants: ['tag'],
-    effects: ['white', 'pointer']
+    tag: true,
+    pointer: true
   }, "Etheruem Enabled")
 };
 EnableEthereum.propTypes = {
   spaceAuto: PropTypes.bool
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(EnableEthereum, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(EnableEthereum, props));
 
 exports.default = _default;

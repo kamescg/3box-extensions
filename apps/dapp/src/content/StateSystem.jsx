@@ -84,7 +84,7 @@ export default Home
 const Install3Box = props => {
   return (
     <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
+      <Atom.Flex alignCenter sx={{ bg: 'neutral', color: 'text', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
           <Atom.Heading md heavy m={0}>Install 3Box</Atom.Heading>
           <Atom.Paragraph m={0}>

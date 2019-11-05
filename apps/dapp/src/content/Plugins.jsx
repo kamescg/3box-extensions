@@ -6,7 +6,7 @@ const Home = props =>
   <Site sx={{ bg: 'smoke' }} sxMain={{ alignItems: 'center', justifyContent: 'center' }}>
     <Atom.Heading xxl heavy>Plugin Systems</Atom.Heading>
     <Atom.Paragraph>
-      Extend 3Box Dev with unique Plugin Systems
+      Extend 3Box Extensions with unique Plugin Systems
     </Atom.Paragraph>
     <PluginCMS />
     <PluginProfiles />
@@ -18,9 +18,9 @@ export default Home
 const PluginCMS = props => {
   return (
     <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
+      <Atom.Flex alignCenter sx={{ bg: 'neutral', color: 'text', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box Dev CMS</Atom.Heading>
+          <Atom.Heading md heavy m={0}>3Box Extensions CMS</Atom.Heading>
           <Atom.Paragraph m={0}>
             Add a lightweight, loosely typed content management sytem to any decentralized identity.
       </Atom.Paragraph>
@@ -44,11 +44,11 @@ $ yarn add 3id-system-cms`}
 const PluginProfiles = props => {
   return (
     <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
+      <Atom.Flex alignCenter sx={{ bg: 'neutral', color: 'text', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box Dev Profiles</Atom.Heading>
+          <Atom.Heading md heavy m={0}>3Box Extensions Profiles</Atom.Heading>
           <Atom.Paragraph m={0}>
-            Add 3Box Dev Profile components to any application.
+            Add 3Box Extensions Profile components to any application.
       </Atom.Paragraph>
         </Atom.Flex>
         <Atom.Flex flex={3}>
@@ -71,11 +71,11 @@ $ yarn add 3id-system-profiles`}
 const PluginChatroom = props => {
   return (
     <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'white', p: 3, flex: 1, borderRadius: 8 }}>
+      <Atom.Flex alignCenter sx={{ bg: 'neutral', color: 'text', p: 3, flex: 1, borderRadius: 8 }}>
         <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box Dev Chatroom</Atom.Heading>
+          <Atom.Heading md heavy m={0}>3Box Extensions Chatroom</Atom.Heading>
           <Atom.Paragraph m={0}>
-            Add 3Box Dev Chatrooms (powered by Ghost Threads) to any React application.
+            Add 3Box Extensions Chatrooms (powered by Ghost Threads) to any React application.
       </Atom.Paragraph>
         </Atom.Flex>
         <Atom.Flex flex={3}>

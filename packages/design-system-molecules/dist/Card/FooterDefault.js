@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _designSystemAtoms = _interopRequireDefault(require("@horizin/design-system-atoms"));
+var _designSystemAtoms = require("@horizin/design-system-atoms");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18,10 +18,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var FooterDefault = props => {
-  return props.isFooter ? _react.default.createElement(_designSystemAtoms.default.Flex, {
+  return props.isFooter ? _react.default.createElement(_designSystemAtoms.Flex, {
     width: "100%",
     sx: _objectSpread({}, props.sxFooterDefault, {}, props.sxFooter)
-  }, _react.default.createElement(_designSystemAtoms.default.Span, null, "Details")) : null;
+  }, _react.default.createElement(_designSystemAtoms.Span, null, "Details")) : null;
 };
 
 var _default = FooterDefault;

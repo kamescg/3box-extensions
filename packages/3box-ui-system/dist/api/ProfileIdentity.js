@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _idx = _interopRequireDefault(require("idx"));
 
-var _utilities = require("../utilities");
+var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16,6 +16,6 @@ var _default = props => _react.default.createElement(DID.Context, null, box => _
   sm: true,
   thin: true,
   sx: props.sx
-}, box.profile.name));
+}, (0, _idx.default)(box, _ => _['@'][box.address].profile.name)));
 
 exports.default = _default;

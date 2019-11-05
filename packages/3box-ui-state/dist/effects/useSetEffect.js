@@ -165,7 +165,6 @@ var useSetEffect = (state, dispatch) => {
             });
             setDispatched(true);
           } catch (error) {
-            console.log(error, 'insert failure');
             dispatch({
               type: "SET_INSERT_FAILURE",
               payload: error
@@ -178,18 +177,40 @@ var useSetEffect = (state, dispatch) => {
           var dataMarge;
 
           try {
-            dataMarge = selected.delta ? (0, _dotPropImmutableChain.default)(state.profile).merge("".concat(selected.key, ".").concat(selected.delta), selected.value).value()[selected.key] : (0, _dotPropImmutableChain.default)(state.profile).merge("".concat(selected.key), selected.value).value()[selected.key];
-            console.log(dataMarge);
-            state.instance[selected.access].set(selected.key, dataMarge).then(res => {
-              console.log(res, 'DATA MERGE RESPONSE');
-            });
-            dispatch({
-              type: "SET_MERGE_SUCCESS",
-              index: selected.key,
-              key: selected.key,
-              payload: dataMarge
-            });
-            setDispatched(true);
+            if (selected.space) {
+              dataMarge = selected.delta ? (0, _dotPropImmutableChain.default)(state['@'][state.address].spaces[selected.space][selected.access]).merge("".concat(selected.key, ".").concat(selected.delta), selected.value).value()[selected.key] : (0, _dotPropImmutableChain.default)(state['@'][state.address].spaces[selected.space][selected.access]).merge("".concat(selected.key), selected.value).value()[selected.key];
+              /**
+                * 3Box Set
+                * Access the local initialized instance of the SPACE and set data.
+                */
+
+              state.auth.spaces[selected.space].instance[selected.access].set(selected.key, dataMarge).then(res => {
+                dispatch({
+                  type: "SET_MERGE_SUCCESS",
+                  access: selected.access,
+                  key: selected.key,
+                  space: selected.space,
+                  payload: dataMarge
+                });
+                setDispatched(true);
+              });
+            } else {
+              dataMarge = selected.delta ? (0, _dotPropImmutableChain.default)(state['@'][state.address].profile).merge("".concat(selected.key, ".").concat(selected.delta), selected.value).value()[selected.key] : (0, _dotPropImmutableChain.default)(state['@'][state.address].profile).merge("".concat(selected.key), selected.value).value()[selected.key];
+              /**
+               * 3Box Set
+               * Access the local initialized instance of the PROFILE and set data.
+               */
+
+              state.instance[selected.access].set(selected.key, dataMarge).then(res => {
+                dispatch({
+                  type: "SET_MERGE_SUCCESS",
+                  index: selected.key,
+                  key: selected.key,
+                  payload: dataMarge
+                });
+                setDispatched(true);
+              });
+            }
           } catch (error) {
             console.log(error);
             dispatch({

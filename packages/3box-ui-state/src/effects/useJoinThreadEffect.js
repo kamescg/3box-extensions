@@ -14,7 +14,7 @@ const useJoinThreadEffect = (state, dispatch) => {
   useEffect(() => {
     if (state.store && state.store.threads) {
       const selected = state.store.threads[0]
-      if (selected && state.spaces && state.auth.spaces[selected.space].instance) {
+      if (selected && state.spaces && state.auth.spaces[selected.space] && state.auth.spaces[selected.space].instance) {
         try {
 
           const runEffect = async () => {

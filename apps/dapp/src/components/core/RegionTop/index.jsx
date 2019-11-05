@@ -5,16 +5,15 @@
  */
 /* --- Global --- */
 import { Link } from '@reach/router'
-import { Login } from '3box-ui-system'
+import { ColorMode } from 'core'
 
 const RegionTop = props => {
   return (
-    <Atom.Flex alignCenter between sx={{ variant: 'layout.header' }}>
+    <Atom.Flex alignCenter between sx={{variant: 'regions.header'}}>
       {/* Left */}
       <Atom.Flex alignCenter>
         <Link to='/'>
           <Atom.Heading sm heavy mb={0}>{GLOBAL.siteName}</Atom.Heading>
-          <Atom.Heading xxs normal>A Rapid Experiment</Atom.Heading>
         </Link>
 
         {/* Menu */}
@@ -25,28 +24,24 @@ const RegionTop = props => {
             }}
             items={[
               {
-                label: 'Setup',
-                to: '/setup'
+                label: 'Install',
+                to: '/install'
               },
               {
-                label: 'UI State',
-                to: '/3box-ui-state'
+                label: 'Feautres',
+                to: '/features'
               },
               {
-                label: 'UI System',
-                to: '/3box-ui-system'
+                label: 'Demo',
+                to: '/demo'
               },
-              {
-                label: 'UI Render',
-                to: '/3box-ui-system-render'
-              }
             ]}
           />
         </Atom.Flex>
         {/* Right */}
       </Atom.Flex>
       <Atom.Flex alignCenter>
-        <Login />
+            <ColorMode />
       </Atom.Flex>
     </Atom.Flex>
   )

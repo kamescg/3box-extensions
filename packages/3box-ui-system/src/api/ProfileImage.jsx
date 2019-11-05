@@ -7,12 +7,16 @@ export default props =>
     <A.Flex
       circle center column boxShadow={0} p={2}
       sx={{
-        border: "2px solid #FFF",
+        borderWidth: 2,
+        borderStyle: 'solid',
+        borderColor: 'white',
         borderRadius: 9999,
+        maxWidth: 70,
+        height: 48,
+        width: 48,
         overflow: 'hidden',
         ...props.sx
       }}
-      width={36} height={36} maxWidth={48} maxWidth={48}
       {...props}
       >
         {

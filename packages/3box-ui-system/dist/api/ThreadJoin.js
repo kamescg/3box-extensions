@@ -9,7 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _uiCompose = require("@horizin/ui-compose");
 
@@ -94,6 +94,6 @@ OpenSpace.propTypes = {
   loggedOutLabel: PropTypes.string
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(OpenSpace, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(OpenSpace, props));
 
 exports.default = _default;

@@ -36,8 +36,8 @@ var Provider = (_ref) => {
       props = _objectWithoutProperties(_ref, ["children"]);
 
   var initialState = (0, _react.useContext)(_Context.default);
-  var [state, dispatch] = (0, _react.useReducer)(_reducer.default, initialState);
-  console.log(state, 'Box Provider');
+  var [state, dispatch] = (0, _react.useReducer)(_reducer.default, initialState); // console.log(state, 'Box Provider')
+
   (0, _effects.useAutoEnableEffect)(state, dispatch);
   (0, _effects.useAutoLoginEffect)(state, dispatch);
   (0, _effects.useAutoRequestProfileEffect)(state, dispatch);
@@ -205,8 +205,8 @@ var Provider = (_ref) => {
        */
       setMerge: (_ref9) => {
         var {
-          space,
           access,
+          space,
           key,
           delta,
           value
@@ -214,36 +214,19 @@ var Provider = (_ref) => {
         return dispatch({
           type: 'SET_MERGE_REQUEST',
           key,
+          space,
           delta,
           value,
-          access,
-          space
+          access
         });
       },
-      setInsert: (_ref10) => {
-        var {
-          space,
-          access,
-          index,
-          key,
-          input
-        } = _ref10;
-        return dispatch({
-          type: 'SET_INSERT_REQUEST',
-          space,
-          access,
-          index,
-          key,
-          input
-        });
-      },
-      setSingle: (_ref11) => {
+      setSingle: (_ref10) => {
         var {
           access,
           key,
           value,
           space
-        } = _ref11;
+        } = _ref10;
         return dispatch({
           type: 'SET_SINGLE_REQUEST',
           access,
@@ -252,13 +235,13 @@ var Provider = (_ref) => {
           space
         });
       },
-      setMultiple: (_ref12) => {
+      setMultiple: (_ref11) => {
         var {
           space,
           access,
           keys,
           inputs
-        } = _ref12;
+        } = _ref11;
         return dispatch({
           type: 'SET_MULTIPLE_REQUEST',
           space,
@@ -267,12 +250,12 @@ var Provider = (_ref) => {
           inputs
         });
       },
-      remove: (_ref13) => {
+      remove: (_ref12) => {
         var {
           space,
           access,
           key
-        } = _ref13;
+        } = _ref12;
         return dispatch({
           type: 'REMOVE_REQUEST',
           access,
@@ -286,14 +269,14 @@ var Provider = (_ref) => {
        * @function insert
        * @description Insert value into object.
        */
-      insert: (_ref14) => {
+      insert: (_ref13) => {
         var {
           space,
           access,
           index,
           key,
           value
-        } = _ref14;
+        } = _ref13;
         return dispatch({
           type: 'INSERT_REQUEST',
           address: state.address,
@@ -309,13 +292,13 @@ var Provider = (_ref) => {
        * @function delete
        * @description Delete value from object.
        */
-      delete: (_ref15) => {
+      delete: (_ref14) => {
         var {
           space,
           access,
           index,
           key
-        } = _ref15;
+        } = _ref14;
         return dispatch({
           type: 'DELETE_REQUEST',
           address: state.address,
@@ -331,13 +314,13 @@ var Provider = (_ref) => {
        * @description Push value to array
        * @todo ADD THIS FEATURE EVERYWHERE
        */
-      push: (_ref16) => {
+      push: (_ref15) => {
         var {
           space,
           access,
           index,
           value
-        } = _ref16;
+        } = _ref15;
         return dispatch({
           type: 'PUSH_REQUEST',
           address: state.address,
@@ -353,13 +336,13 @@ var Provider = (_ref) => {
        * @description Filter array.
        * @todo ADD THIS FEATURE EVERYWHERE
        */
-      filter: (_ref17) => {
+      filter: (_ref16) => {
         var {
           space,
           access,
           index,
           filter: _filter
-        } = _ref17;
+        } = _ref16;
         return dispatch({
           type: 'FILTER_REQUEST',
           address: state.address,
@@ -371,13 +354,13 @@ var Provider = (_ref) => {
       },
 
       /* --- Messageing (https://docs.3box.io/api/messaging) --- */
-      joinThread: (_ref18) => {
+      joinThread: (_ref17) => {
         var {
           space,
           threadName,
           threadAddress,
           options
-        } = _ref18;
+        } = _ref17;
         return dispatch({
           type: 'JOIN_THREAD_REQUEST',
           space,
@@ -386,12 +369,12 @@ var Provider = (_ref) => {
           options
         });
       },
-      threadPost: (_ref19) => {
+      threadPost: (_ref18) => {
         var {
           space,
           threadName,
           post
-        } = _ref19;
+        } = _ref18;
         return dispatch({
           type: 'THREAD_POST_PUBLISH_REQUEST',
           space,
@@ -399,12 +382,12 @@ var Provider = (_ref) => {
           post
         });
       },
-      threadPostDelete: (_ref20) => {
+      threadPostDelete: (_ref19) => {
         var {
           space,
           threadName,
           postId
-        } = _ref20;
+        } = _ref19;
         return dispatch({
           type: 'THREAD_POST_DELETE_REQUEST',
           space,

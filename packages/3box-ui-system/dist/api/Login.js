@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _boxReactState = require("3box-ui-state");
+var _boxUiState = require("3box-ui-state");
 
 var _designSystemAtoms = require("@horizin/design-system-atoms");
 
@@ -38,12 +38,12 @@ var Login = (_ref) => {
 
 Login.defaultProps = {
   componentIsLoggedOut: _react.default.createElement(_designSystemAtoms.Span, {
-    variants: ['tag'],
-    effects: ['white', 'pointer']
+    tag: true,
+    pointer: true
   }, "Login"),
   componentIsLoading: _react.default.createElement(_designSystemAtoms.Span, {
-    variants: ['tag'],
-    effects: ['white']
+    tag: true,
+    pointer: true
   }, "Loading"),
   componentIsLoggedIn: _react.default.createElement(_designSystemAtoms.Span, null, _react.default.createElement(_Avatar.default, null))
 };
@@ -51,6 +51,6 @@ Login.propTypes = {
   spaceAuto: PropTypes.bool
 };
 
-var _default = props => _react.default.createElement(_boxReactState.BoxInject, null, _react.default.createElement(Login, props));
+var _default = props => _react.default.createElement(_boxUiState.BoxInject, null, _react.default.createElement(Login, props));
 
 exports.default = _default;
