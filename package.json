@@ -17,8 +17,8 @@
   "workspaces": {
     "package-entry": "main",
     "packages": [
-      "packages/apps/*",
-      "packages/modules/*"
+      "apps/*",
+      "packages/*"
     ],
     "nohoist": [
       "**/webpack-dev-server",

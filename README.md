@@ -1,6 +1,6 @@
-# 3Box Extensions
+# 3Box Plugins
 
-The 3Box Extensions module is an experiment to create plugins for 3Box.
+The 3Box Plugins module is an experiment to create an plugin system for 3Box.
 
 Simplifying the steps required to add decentralized authentication, storage and messaging.
 
