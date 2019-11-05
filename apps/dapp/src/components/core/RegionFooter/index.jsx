@@ -15,30 +15,14 @@ const Footer = props => {
         <Link to='/'>
           <Atom.Heading sm heavy mb={0}>{GLOBAL.siteName}</Atom.Heading>
         </Link>
-
-        <Molecule.Menu
-          sxMenu={{ ml: 3 }}
-          sx={{
-            mx: 2
-          }}
-          items={[
-            {
-              label: 'Support',
-              to: '/support'
-            },
-            {
-              label: 'Feedback',
-              to: '/feedback'
-            },
-          ]}
-        />
-
       </Atom.Flex>
 
       {/* Right */}
 
       <Atom.Flex alignCenter>
-        <Atom.Span xxs>Built by Kames - Decentralized Frontend Developer</Atom.Span>
+        <a href='https://github.com/kamescg'>
+          <Atom.Span sx={{fontSize: 1}}>Built by Kames</Atom.Span>
+        </a>
       </Atom.Flex>
     </Atom.Flex>
   )

@@ -74,19 +74,6 @@ export default (state, action) => {
     case 'OPEN_FAILURE':
       return state
 
-    case 'OPEN_SPACE_REQUEST':
-      return dot(state).set(`store.open`, [action]).value()
-
-    case 'OPEN_SPACE_SUCCESS':
-      return dot(state)
-        .set(`spaces.${action.space}.instance`, action.instance) // Deprecated path
-        .set(`spaces.${action.space}.threads`, action.threads) // Deprecated path
-        .set(`auth.spaces.${action.space}.instance`, action.instance) // New path
-        .set(`auth.spaces.${action.space}.threads`, action.threads) // New path
-        .set(`store.open`, [])
-        .value()
-
-
     /* LOGOUT
     /* ------------------ */
     case 'LOGOUT_REQUEST':
@@ -95,15 +82,25 @@ export default (state, action) => {
         isLoggingOut: true
       };
     case 'LOGOUT_SUCCESS':
-      return {
-        ...state,
-        box: undefined,
-        isLoggedIn: false,
-        spaces: {},
-        threads: {}
-      };
+      return dot(state)
+        .set(`isLogginIn`, false)
+        .set(`isLoggedIn`, false)
+        .value()
     case 'LOGOUT_FAILURE':
       return state
+
+    case 'OPEN_SPACE_REQUEST':
+        return dot(state).set(`store.open`, [action]).value()
+  
+      case 'OPEN_SPACE_SUCCESS':
+        return dot(state)
+          .set(`spaces.${action.space}.instance`, action.instance) // Deprecated path
+          .set(`spaces.${action.space}.threads`, action.threads) // Deprecated path
+          .set(`auth.spaces.${action.space}.instance`, action.instance) // New path
+          .set(`auth.spaces.${action.space}.threads`, action.threads) // New path
+          .set(`store.open`, [])
+          .value()
+  
 
     /* ------------------ */
     /* Get Space

@@ -33,6 +33,7 @@ var StorageRender = (_ref) => {
 
   var storage = _boxUiState.Effects.useStorageRetrieveEffect(box, props);
 
+  console.log(storage, 'storagestoragestorage');
   return !storage.data ? null : props.isList ? _react.default.createElement(_uiCompose.ListObjectValues, {
     data: storage.data,
     pass: props.pass,

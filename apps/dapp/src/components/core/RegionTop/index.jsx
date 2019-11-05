@@ -21,6 +21,10 @@ export default props =>
             label: 'Install',
             to: '/install'
           },
+          {
+            label: 'Profile',
+            to: '/profile'
+          },
         ]}
       />
     </Atom.Flex>

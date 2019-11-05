@@ -5,43 +5,85 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
-
-var _designSystemAtoms = require("@horizin/design-system-atoms");
+var _react = _interopRequireDefault(require("react"));
 
 var _boxUiState = require("3box-ui-state");
 
+var _designSystemAtoms = require("@horizin/design-system-atoms");
+
+var _uiCompose = require("@horizin/ui-compose");
+
 var _effects = require("./effects");
+
+var _EnableEthereum = _interopRequireDefault(require("./EnableEthereum"));
 
 var _Avatar = _interopRequireDefault(require("./Avatar"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-/* --- React Component --- */
-var Login = (_ref) => {
+/* ---  Sub-Component --- */
+var ButtonLogin = (_ref) => {
+  var {
+    label
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["label"]);
+
+  return _react.default.createElement(_designSystemAtoms.Button, props, label);
+};
+/* --- Component --- */
+
+
+var Login = (_ref2) => {
   var {
     box
-  } = _ref,
-      props = _objectWithoutProperties(_ref, ["box"]);
+  } = _ref2,
+      props = _objectWithoutProperties(_ref2, ["box"]);
 
+  var enabled = (0, _effects.useEnableEffect)(box);
   var login = (0, _effects.useOpenRequestEffect)(box);
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("span", {
+  return _react.default.createElement(_react.default.Fragment, null, !enabled.ready && _react.default.createElement(_EnableEthereum.default, null), enabled.ready && !login.isDispatched && !login.isLoggedIn ? _react.default.createElement("span", {
     onClick: box.login
-  }, !login.isDispatched && !login.isLoggedIn ? !_react.default.isValidElement(props.componentIsLoggedOut) ? _react.default.createElement(props.componentIsLoggedOut) : props.componentIsLoggedOut || null : null), _react.default.createElement("span", null, login.isDispatched && !login.isLoggedIn ? !_react.default.isValidElement(props.componentIsLoading) ? _react.default.createElement(props.componentIsLoading) : props.componentIsLoading || null : null), login.isLoggedIn && _react.default.createElement("span", null, props.children || !_react.default.isValidElement(props.componentIsLoggedIn) ? _react.default.createElement(props.componentIsLoggedIn) : props.componentIsLoggedIn || null));
+  }, (0, _uiCompose.Component)(props.componentLoggedOut, _objectSpread({
+    label: props.loggedOutLabel
+  }, props.sxLoggedOut))) : null, login.isDispatched && !login.isLoggedIn ? (0, _uiCompose.Component)(props.componentLoading, _objectSpread({
+    label: props.loadingLabel
+  }, props.sxLoading)) : null, login.isLoggedIn && _react.default.createElement("span", null, props.children || _react.default.createElement(_react.default.Fragment, null, props.display === 'avatar' ? (0, _uiCompose.Component)(_Avatar.default, _objectSpread({
+    label: props.loggedInLabel
+  }, props.sxLoggedIn)) : (0, _uiCompose.Component)(props.componentLoggedIn, _objectSpread({
+    label: props.loggedInLabel
+  }, props.sxLoggedIn)))));
 };
 
 Login.defaultProps = {
-  componentIsLoggedOut: _react.default.createElement(_designSystemAtoms.Button, null, "3Box"),
-  componentIsLoading: _react.default.createElement(_designSystemAtoms.Button, null, "3Box Loading"),
-  componentIsLoggedIn: _react.default.createElement(_designSystemAtoms.Button, null, "3Box Active")
+  loggedOutLabel: 'Login',
+  loadingLabel: 'Loading...',
+  loggedInLabel: '3Box Active',
+  componentLoggedOut: ButtonLogin,
+  componentLoading: ButtonLogin,
+  componentLoggedIn: ButtonLogin,
+  display: 'Button',
+  sxLoggedOut: {
+    pointer: true,
+    Button: true
+  },
+  sxLoading: {
+    pointer: true,
+    Button: true
+  },
+  sxLoggedIn: {
+    pointer: true,
+    Button: true
+  }
 };
 Login.propTypes = {
   spaceAuto: PropTypes.bool

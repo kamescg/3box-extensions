@@ -33,7 +33,7 @@ const Provider = ({ children, ...props }) => {
   const initialState = useContext(Context)
   const [state, dispatch] = useReducer(reducerActions, initialState);
 
-  // console.log(state, 'Box Provider')
+  console.log(state, 'Box Provider')
 
   useAutoEnableEffect(state, dispatch)
   useAutoLoginEffect(state, dispatch)

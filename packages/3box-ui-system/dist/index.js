@@ -45,6 +45,12 @@ Object.defineProperty(exports, "EnableEthereum", {
     return _EnableEthereum.default;
   }
 });
+Object.defineProperty(exports, "Authenticate", {
+  enumerable: true,
+  get: function get() {
+    return _Authenticate.default;
+  }
+});
 Object.defineProperty(exports, "Login", {
   enumerable: true,
   get: function get() {
@@ -249,6 +255,8 @@ var _Auth = _interopRequireDefault(require("./api/Auth"));
 var _Avatar = _interopRequireDefault(require("./api/Avatar"));
 
 var _EnableEthereum = _interopRequireDefault(require("./api/EnableEthereum"));
+
+var _Authenticate = _interopRequireDefault(require("./api/Authenticate"));
 
 var _Login = _interopRequireDefault(require("./api/Login"));
 

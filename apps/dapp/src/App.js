@@ -1,7 +1,7 @@
 
 /**
  * @function Application
- * @version 1.0.0
+ * @version 0.0.1
  * @description Application
  */
 
@@ -9,15 +9,11 @@
 import './assets/App.css';
 import './assets/index.css';
 import { Router } from '@reach/router'
-/*
-* Providers
-* Initialize application state providers.
-* @todo Create provider plugin system.
-*/
 import Providers from './providersWithLocation'
 
 import {
 	Home,
+	Profile,
 } from './pages'
 import Content from './content'
 
@@ -26,6 +22,7 @@ export default () =>
 	<Providers>
 		<Router width='100%'>
 			<Home path='/' />
+			<Profile path='/profile' />
 			<Content path='/*' /> 
 		</Router>
 	</Providers>

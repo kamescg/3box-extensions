@@ -19,6 +19,7 @@
     "3box-ui-profiles-stateless": "^0.0.1",
     "3box-ui-state": "^0.0.1",
     "3box-ui-system": "^0.0.1",
+    "3box-ui-system-render": "^0.0.1",
     "@horizin/design-system-atoms": "^0.0.1",
     "@horizin/design-system-molecules": "^0.0.1",
     "@horizin/design-system-organisms": "^0.0.1",

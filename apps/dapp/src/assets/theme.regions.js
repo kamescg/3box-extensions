@@ -18,10 +18,11 @@ export default {
     zIndex: 100,
   },
   footer: {
+    bg:'paper',
+    color: 'text',
     boxShadow: 0,
-    color: '#1e1e2d',
     px: 4,
-    py: 2,
+    py: 3,
     zIndex: 100,
   },
   fill: {

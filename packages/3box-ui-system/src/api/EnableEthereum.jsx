@@ -1,69 +1,78 @@
-/* --- Global Dependencies --- */
-import React, { useEffect, useState } from 'react'
-import { Span } from '@horizin/design-system-atoms'
+/* --- Global --- */
+import React from 'react'
+import PropTypes from 'prop-types'
 import { BoxInject } from '3box-ui-state'
+import { Span } from '@horizin/design-system-atoms'
+import { Component } from '@horizin/ui-compose'
 import { useEnableEffect } from './effects'
 
-/* --- React Component --- */
+/* ---  Sub-Component --- */
+const Tag = ({label, ...props}) => <Span {...props} >{label}</Span>
+
+/* ---  Component --- */
 const EnableEthereum = ({ box, ...props }) => {
   const enabled = useEnableEffect(box)
-
-
-  /* --- Effects --- */
   return (
     <>
-    {
-      <span onClick={()=>box.enable()} >
-        {
-          !enabled.dispatched && !enabled.ready
-          ? !React.isValidElement(props.componentIsDisconnected)
-            ? React.createElement(props.componentIsDisconnected)
-            : props.componentIsDisconnected || null
-          : null
-        }
-      </span>
-    }
-
-    <span>{
-      enabled.dispatched && !enabled.ready
-      ? !React.isValidElement(props.componentIsLoading)
-          ? React.createElement(props.componentIsLoading)
-          : props.componentIsLoading || null
-      : null
-    }</span>
-
-    {
-      enabled.ready &&
-      <span>
-        {
-          props.children || !React.isValidElement(props.componentIsConnected)
-            ? React.createElement(props.componentIsConnected)
-            : props.componentIsConnected || null
-        }
-      </span>
-    }
-    
+      {
+        !enabled.dispatched && !enabled.ready &&
+        <span onClick={()=>box.enable()} >
+          {Component(props.componentIsDisconnected, {label: props.disconnectedLabel, ...props.sxDisconnected})}
+        </span>
+      }
+      {
+        enabled.dispatched && !enabled.ready
+        ? Component(props.componentIsLoading, {label: props.loadingLabel, ...props.sxLoading})
+        : null
+      }
+      {
+        enabled.ready && 
+        (props.children || Component(props.componentIsConnected, { label: props.connectedLabel, ...props.sxConnected}))
+      }
     </>
   )
 }
 
 EnableEthereum.defaultProps = {
-  componentIsDisconnected: (
-    <Span tag pointer >Enable</Span>
-    ),
-  componentIsLoading: (
-    <Span tag >Loading</Span>
-  ),
-  componentIsConnected:(
-    <Span tag pointer >Etheruem Enabled</Span>
-    )
+  disconnectedLabel: 'Enable',
+  loadingLabel: 'Loading',
+  connectedLabel: 'Enabled',
+  componentIsDisconnected: Tag,
+  componentIsLoading: Tag,
+  componentIsConnected: Tag,
+  sxDisconnected: {
+    pointer: true,
+    tag: true,
+  },
+  sxLoading: {
+    pointer: true,
+    tag: true,
+  },
+  sxConnected: {
+    pointer: true,
+    tag: true,
+  }
 }
 
 EnableEthereum.propTypes = {
-  spaceAuto: PropTypes.bool
+  disconnectedLabel: PropTypes.string,
+  loadingLabel: PropTypes.string,
+  connectedLabel: PropTypes.string,
+  sxDisconnected: PropTypes.object,
+  sxLoading: PropTypes.object,
+  sxConnected: PropTypes.object,
+  componentIsDisconnected: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.elementType,
+  ]),
+  componentIsLoading: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.elementType,
+  ]),
+  componentIsConnected: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.elementType,
+  ]),
 }
-
-
-
 
 export default props => <BoxInject><EnableEthereum {...props} /></BoxInject>

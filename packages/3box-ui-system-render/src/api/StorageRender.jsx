@@ -10,6 +10,9 @@ import { Effects } from '3box-ui-state'
 /* --- Component --- */
 const StorageRender = ({ box, ...props }) => {
   const storage = Effects.useStorageRetrieveEffect(box, props)
+
+  console.log(storage, 'storagestoragestorage')
+
   return (
     !storage.data
       ? null

@@ -36,8 +36,8 @@ var Provider = (_ref) => {
       props = _objectWithoutProperties(_ref, ["children"]);
 
   var initialState = (0, _react.useContext)(_Context.default);
-  var [state, dispatch] = (0, _react.useReducer)(_reducer.default, initialState); // console.log(state, 'Box Provider')
-
+  var [state, dispatch] = (0, _react.useReducer)(_reducer.default, initialState);
+  console.log(state, 'Box Provider');
   (0, _effects.useAutoEnableEffect)(state, dispatch);
   (0, _effects.useAutoLoginEffect)(state, dispatch);
   (0, _effects.useAutoRequestProfileEffect)(state, dispatch);

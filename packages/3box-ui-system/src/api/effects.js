@@ -55,6 +55,7 @@ export const useOpenRequestEffect = (state, props) => {
 
   useEffect( () => { 
       setEnabled(state.isLoggedIn)
+      setDispatched(false)
   }, [state.isLoggedIn])
 
   return {

@@ -23,19 +23,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /* --- Component --- */
 var useStorageRetrieveEffect = (state, props) => {
   var [data, setData] = (0, _react.useState)();
+  var [address, setAddress] = (0, _react.useState)(props.address || state.address);
+  console.log(data, props.selector, 'stttooorage');
   (0, _react.useEffect)(() => {
-    if (state['@'][props.address]) {
+    setAddress(state.address);
+  }, [state.address]);
+  (0, _react.useEffect)(() => {
+    if (state['@'][address]) {
       var _data;
 
       if (!props.space) {
-        _data = _dotPropImmutableChain.default.get(state, "@.".concat(props.address, ".profile.").concat(props.selector));
+        _data = _dotPropImmutableChain.default.get(state, "@.".concat(address, ".profile.").concat(props.selector));
         setData(_data);
       } else {
-        _data = _dotPropImmutableChain.default.get(state, "@.".concat(props.address, ".spaces.").concat(props.space, ".").concat(props.access, ".").concat(props.selector));
+        _data = _dotPropImmutableChain.default.get(state, "@.".concat(address, ".spaces.").concat(props.space, ".").concat(props.access, ".").concat(props.selector));
         setData(_data);
       }
     }
-  }, [state['@'][props.address], props]);
+  }, [state['@'][address], props]);
   return {
     data
   };

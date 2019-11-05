@@ -4,7 +4,7 @@ import { CodeCard } from '@horizin/design-system-molecules'
 export default () =>
 <CodeCard
   title='Login'
-  summary='Authentication Login Button'
+  summary='Ask users to Open 3Box and authenticate.'
   example={<Login />}
   code={CodeExampleString}
 />

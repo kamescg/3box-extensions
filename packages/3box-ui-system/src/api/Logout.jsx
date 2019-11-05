@@ -2,45 +2,42 @@
 import React from 'react'
 import { BoxInject } from '3box-ui-state'
 import { Span } from '@horizin/design-system-atoms'
+import { Component } from '@horizin/ui-compose'
+import { useEnableEffect, useOpenRequestEffect } from './effects'
+import EthereumEnable from './EnableEthereum'
 import Avatar from './Avatar'
-import { useOpenRequestEffect } from './effects'
+
+/* ---  Sub-Component --- */
+const Tag = ({label, ...props}) => <Span {...props} >{label}</Span>
 
 /* --- Component --- */
-const Login = ({ sxLoggedOut, sxLoading, sxLoggedIn, box, ...props }) => {
+const Login = ({ box, ...props }) => {
+  const enabled = useEnableEffect(box)
   const login = useOpenRequestEffect(box)
   return (
     <>
     {
-      <span>
-        {
-          !login.isDispatched && !login.isLoggedIn
-          ? !React.isValidElement(props.componentIsLoggedOut)
-            ? React.createElement(props.componentIsLoggedOut)
-            : props.componentIsLoggedOut || null
-          : null
-        }
-      </span>
+      !enabled.ready && <EthereumEnable />
     }
-
-    <span>
-      {
-        login.isDispatched && !login.isLoggedIn
-        ? !React.isValidElement(props.componentIsLoading)
-            ? React.createElement(props.componentIsLoading)
-            : props.componentIsLoading || null
-        : null
-      }
-    </span>
-
+    {
+      enabled.ready && !login.isDispatched && !login.isLoggedIn
+      ? <span onClick={box.login} >
+          {Component(props.componentLoggedOut, {label: props.loggedOutLabel, ...props.sxLoggedOut})} 
+        </span>
+      : null
+    }
+    {
+      login.isDispatched && !login.isLoggedIn
+      ? Component(props.componentLoading,  {label: props.loadingLabel, ...props.sxLoading})
+      : null
+    }
     {
       login.isLoggedIn &&
-      <Atom.Span effects={['pointer']} onClick={box.logout} >
+      <span onClick={box.logout} >
         {
-          props.children || !React.isValidElement(props.componentIsLoggedIn)
-            ? React.createElement(props.componentIsLoggedIn)
-            : props.componentIsLoggedIn || null
+          props.children || Component(props.componentLoggedIn,  {label: props.loggedInLabel, ...props.sxLoggedIn})
         }
-      </Atom.Span>
+      </span>
     }
     
     </>
@@ -48,15 +45,25 @@ const Login = ({ sxLoggedOut, sxLoading, sxLoggedIn, box, ...props }) => {
 }
 
 Login.defaultProps = {
-  componentIsLoggedOut: (
-    <Span variants={['tag']} effects={['white', 'pointer']} >Login</Span>
-    ),
-  componentIsLoading: (
-    <Span variants={['tag']} effects={['white']} >Loading</Span>
-  ),
-  componentIsLoggedIn:(
-    <Span >Logout</Span>
-    )
+  loggedOutLabel: 'Login',
+  loadingLabel: 'Loading...',
+  loggedInLabel: 'Logout',
+  componentLoggedOut: Tag,
+  componentLoading: Tag,
+  componentLoggedIn: Tag,
+  display: 'tag',
+  sxLoggedOut: {
+    pointer: true,
+    tag: true,
+  },
+  sxLoading: {
+    pointer: true,
+    tag: true,
+  },
+  sxLoggedIn: {
+    pointer: true,
+    tag: true,
+  }
 }
 
 Login.propTypes = {

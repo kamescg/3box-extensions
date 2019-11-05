@@ -84,16 +84,6 @@ var _default = (state, action) => {
     case 'OPEN_FAILURE':
       return state;
 
-    case 'OPEN_SPACE_REQUEST':
-      return (0, _dotPropImmutableChain.default)(state).set("store.open", [action]).value();
-
-    case 'OPEN_SPACE_SUCCESS':
-      return (0, _dotPropImmutableChain.default)(state).set("spaces.".concat(action.space, ".instance"), action.instance) // Deprecated path
-      .set("spaces.".concat(action.space, ".threads"), action.threads) // Deprecated path
-      .set("auth.spaces.".concat(action.space, ".instance"), action.instance) // New path
-      .set("auth.spaces.".concat(action.space, ".threads"), action.threads) // New path
-      .set("store.open", []).value();
-
     /* LOGOUT
     /* ------------------ */
 
@@ -103,15 +93,20 @@ var _default = (state, action) => {
       });
 
     case 'LOGOUT_SUCCESS':
-      return _objectSpread({}, state, {
-        box: undefined,
-        isLoggedIn: false,
-        spaces: {},
-        threads: {}
-      });
+      return (0, _dotPropImmutableChain.default)(state).set("isLogginIn", false).set("isLoggedIn", false).value();
 
     case 'LOGOUT_FAILURE':
       return state;
+
+    case 'OPEN_SPACE_REQUEST':
+      return (0, _dotPropImmutableChain.default)(state).set("store.open", [action]).value();
+
+    case 'OPEN_SPACE_SUCCESS':
+      return (0, _dotPropImmutableChain.default)(state).set("spaces.".concat(action.space, ".instance"), action.instance) // Deprecated path
+      .set("spaces.".concat(action.space, ".threads"), action.threads) // Deprecated path
+      .set("auth.spaces.".concat(action.space, ".instance"), action.instance) // New path
+      .set("auth.spaces.".concat(action.space, ".threads"), action.threads) // New path
+      .set("store.open", []).value();
 
     /* ------------------ */
 

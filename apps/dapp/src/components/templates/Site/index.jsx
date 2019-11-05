@@ -2,14 +2,14 @@ import {RegionTop, RegionFooter} from 'core';
 
 const SiteTemplate = ({sx, sxMain, styled, children, ...props}) => {
   return (
-    <A.Flex column flex={1} minHeight="100vh" sx={sx}>
+    <A.Flex column sx={{ minHeight: '100vh', flex: 1, ...sx}}>
       <RegionTop
         bg="#1e1e2d"
         color="white"
         borderBottom="3px solid #dc448d"
         p={2}
       />
-      <A.Flex column flex={1} width="100%" sx={sxMain}>
+      <A.Flex column sx={{flex: 1, ...sxMain}}>
         {children}
       </A.Flex>
       <RegionFooter

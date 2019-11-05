@@ -1,16 +1,14 @@
 
 
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 import {FormStorageSet} from 'forms'
 import {CodeCard} from '@horizin/design-system-molecules'
 import {Login, StorageSet} from '3box-ui-system'
 
-
-
 export default () =>
 <CodeCard
-  title='Storage Merge'
-  summary='Merge a value in a 3Box profile or space. Access nested objects and arrays with support for dot notation.'
+  title='Storage Set'
+  summary='Set a value in a 3Box profile or space.'
   example={<StorageSetForm />}
   code={CodeExampleString}
 />

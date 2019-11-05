@@ -60,6 +60,7 @@ var useOpenRequestEffect = (state, props) => {
   }, [state.isLoggingIn]);
   (0, _react.useEffect)(() => {
     setEnabled(state.isLoggedIn);
+    setDispatched(false);
   }, [state.isLoggedIn]);
   return {
     isDispatched: isDispatched,

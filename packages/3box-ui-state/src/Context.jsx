@@ -51,7 +51,7 @@ const Context = createContext({
 
   isInitialized: false,
   isRequestOpen: false,
-  isEnableAuto: true, // Request ETH Address
+  isEnableAuto: false, // Request ETH Address
   isLoginAuto: false, // Request 3Box Login
   isRequestProfileAuto: true, // Request Profile Auto
   isLoggedIn: false,

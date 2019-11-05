@@ -44,7 +44,9 @@ const Home = props =>
       {...showcase}
       image={null}
     />
-    <Atom.Span variants={['tag']} effects={['white']}>Rapidly buidl Decentralized Applications</Atom.Span>
+    <a href='https://github.com/kamescg/3box-extensions'>
+      <Atom.Span variants={['tag']} effects={['white']}>Github</Atom.Span>
+    </a>
     <Atom.Container maxWidth={980} sx={{ my: 5 }}>
       <ModuleFeatured
         title='3Box UI State'
@@ -74,39 +76,30 @@ const Home = props =>
     </Atom.Container>
 
     <Atom.Container>
-    <InitProviderExample />
-    <EnableEthereumExample />
+      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Setup</Atom.Heading>
+      <InitProviderExample />
+      <EnableEthereumExample />
 
-    <Atom.Heading xxl heavy>Authenticate</Atom.Heading>
-    <Atom.Paragraph>
-      Login, Open Spaces and Join Threads.
-    </Atom.Paragraph>
-    <AddLoginExample />
-    <SpaceOpenExample />
-    <ThreadJoinExample />
+      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Authenticate</Atom.Heading>
+      <AddLoginExample />
+      <SpaceOpenExample />
+      <ThreadJoinExample />
 
-    <Atom.Heading xxl heavy>Access</Atom.Heading>
-    <Atom.Paragraph>
-      Control access to components based on authentication level.
-    </Atom.Paragraph>
-    <AccessProfileExample />
-    <AccessSpaceExample />
-    <AccessThreadExample />
+      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Access Control</Atom.Heading>
+      <AccessProfileExample />
+      <AccessSpaceExample />
+      <AccessThreadExample />
 
-    <Atom.Heading xxl heavy>Storage</Atom.Heading>
-    <Atom.Paragraph>
-      Manage data controlled by a 3Box decentralized identity.
-    </Atom.Paragraph>
-    <StorageProfileSetExample />
-    <StorageMergeExample />
-    <StorageDeleteExample />
+      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Storage</Atom.Heading>
+      <StorageProfileSetExample />
+      <StorageMergeExample />
+      <StorageDeleteExample />
 
-    <Atom.Heading xxl heavy>Messaging</Atom.Heading>
-    <Atom.Paragraph>
-      Publish posts to public threads or keep it temporary with ghost threads.
-    </Atom.Paragraph>
-    <ThreadPostPublishExample />
-    <ThreadPostDeleteExample />
+      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Messaging</Atom.Heading>
+      <ThreadPostPublishExample />
+      <ThreadPostDeleteExample />
+
+      <Atom.Span variants={['tag']} effects={['white']}>Rapidly buidl Decentralized Applications</Atom.Span>
     </Atom.Container>
 
 

@@ -3,7 +3,7 @@ import { CodeCard } from '@horizin/design-system-molecules'
 
 export default () =>
 <CodeCard
-  title='Access Authenticaiton'
+  title='Access Authentication'
   summary='Require authentication to display child components.'
   example={<Example />}
   code={CodeExampleString}

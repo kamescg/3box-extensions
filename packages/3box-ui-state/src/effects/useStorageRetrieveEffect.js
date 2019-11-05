@@ -12,20 +12,26 @@ import { useState, useEffect } from "react";
 /* --- Component --- */
 const useStorageRetrieveEffect = (state, props) => {
   const [data, setData] = useState()
+  const [ address, setAddress ] = useState(props.address || state.address)
   
+  console.log(data, props.selector, 'stttooorage')
+
+  useEffect( () => { 
+    setAddress(state.address)
+  }, [state.address])
 
   useEffect(() => {
-    if (state['@'][props.address]) {
+    if (state['@'][address]) {
       let data
       if(!props.space) {
-        data = dot.get(state, `@.${props.address}.profile.${props.selector}`)
+        data = dot.get(state, `@.${address}.profile.${props.selector}`)
         setData(data)
       } else {
-        data = dot.get(state, `@.${props.address}.spaces.${props.space}.${props.access}.${props.selector}`)
+        data = dot.get(state, `@.${address}.spaces.${props.space}.${props.access}.${props.selector}`)
         setData(data)
       }
     }
-  }, [state['@'][props.address], props])
+  }, [state['@'][address], props])
 
 
   return {
