@@ -72,7 +72,7 @@ import {BoxProvider} from '3box-ui-system';
 export default props => <BoxProvider>{props.children}</BoxProvider>;
 ```
 
-### 3Box Provider
+### 3Box Context
 
 ```js
 import React from 'react';
@@ -141,6 +141,78 @@ export default props => (
     <Atom.Span tag>Thread Join Complete</Atom.Span>
   </AccessThread>
 );
+```
+
+### Storage
+
+#### Space Open
+
+```js
+import React from 'react';
+import {SpaceOpen} from '3box-ui-system';
+export default props => <SpaceOpen space="3box" />;
+```
+
+#### Storage Set
+
+```js
+import React from 'react';
+import {StorageSet} from '3box-ui-system';
+import {FormStorageSet} from '3ID-system-helpers';
+const StorageSetForm = props => {
+  const [values, setValues] = useState();
+  const [isStorageSet, setStorageSet] = useState();
+  const [storageStatus, setStorageStatus] = useState();
+
+  useEffect(() => {
+    if (isStorageSet) setStorageStatus(true);
+  }, [isStorageSet]);
+  return (
+    <>
+      <FormStorageSet onSubmit={setValues} status={storageStatus} />
+      {values && (
+        <StorageSet
+          access="public"
+          index={values.key}
+          value={values.value}
+          space={undefined} // OPTIONAL VALUE
+          onSet={setStorageSet}
+        />
+      )}
+    </>
+  );
+};
+```
+
+#### Storage Merge
+
+```js
+import React from 'react';
+import {StorageSet} from '3box-ui-system';
+import {FormStorageMerge} from '3ID-system-helpers';
+const StorageSetForm = props => {
+  const [values, setValues] = useState();
+  const [isStorageSet, setStorageSet] = useState();
+  const [storageStatus, setStorageStatus] = useState();
+
+  useEffect(() => {
+    if (isStorageSet) setStorageStatus(true);
+  }, [isStorageSet]);
+  return (
+    <>
+      <FormStorageMerge onSubmit={setValues} status={storageStatus} />
+      {values && (
+        <StorageSet
+          access="public"
+          index={values.key}
+          value={values.value}
+          space={undefined} // OPTIONAL VALUE
+          onSet={setStorageSet}
+        />
+      )}
+    </>
+  );
+};
 ```
 
 ### Threads
