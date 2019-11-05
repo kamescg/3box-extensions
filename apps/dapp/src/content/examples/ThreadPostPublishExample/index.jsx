@@ -48,12 +48,12 @@ const ThreadPostForm = props => {
 )}
 
 const CodeExampleString = (
-  `
+`
 import React from 'react'
-import { ThreadPostDelete } from '3box-ui-system'
+import { ThreadPostPublish } from '3box-ui-system'
 export default props => (
 <ThreadPostPublish
-  threadName='commentThread'
+  threadName='comments'
   post={
     comment: 'What if you could... Would you?'
   }

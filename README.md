@@ -1,6 +1,6 @@
-# 3Box Plugins
+# 3Box Extensions
 
-The 3Box Plugins module is an experiment to create an plugin system for 3Box.
+The 3Box Extensions module is an experiment to create an plugin system for 3Box.
 
 Simplifying the steps required to add decentralized authentication, storage and messaging.
 
@@ -64,49 +64,83 @@ The full context includes a of initial state defaults and empty functions which 
 
 Below is small sample of components to help enable rapid development.
 
+### 3Box Provider
+
+```js
+import React from 'react';
+import {BoxProvider} from '3box-ui-system';
+export default props => <BoxProvider>{props.children}</BoxProvider>;
+```
+
+### 3Box Provider
+
+```js
+import React from 'react';
+import {BoxContext} from '3box-ui-system';
+export default props => (
+<BoxContext>
+{
+  box => (
+    <Component box={box}>
+  )
+}
+</BoxContext>
+)
+```
+
 ### Login
 
 ```js
-import {Login} from '@kames/3box-system';
-const Component = props => <Login />;
+import React from 'react'
+import { Login } from '3box-ui-system'
+
+// Example 1
+export default props => <Login />
+
+// Example 1
+export default props => <Login
+  componentIsLoggedOut={CustomComponent}
+  componentIsLoading={CustomComponent}
+  componentIsLoggedIn={CustomComponent}
+/>
 ```
 
 ## Access Control
 
-### AccessProfile
+### AccessAuthentication
 
 ```js
-import { AccessProfile } from '@kames/3box-system'
-const Component = props =>
-<AccessProfile>
-  <MyFormComponent />
-</AccessThread>
+import React from 'react';
+import {AccessAuthentication} from '3box-ui-system';
+export default props => (
+  <AccessAuthentication>
+    <Atom.Span tag>Authentication Complete</Atom.Span>
+  </AccessAuthentication>
+);
 ```
 
 ### AccessSpace
 
 ```js
-import { AccessSpace } from '@kames/3box-system'
-const Component = props =>
-<AccessSpace space='web3'>
-  <MyFormComponent />
-</AccessThread>
+import React from 'react';
+import {AccessAuthentication} from '3box-ui-system';
+export default props => (
+  <AccessSpace space="web3">
+    <Atom.Span tag>Space Open Complete</Atom.Span>
+  </AccessSpace>
+);
 ```
 
 ### AccessThread
 
 ```js
-import { AccessThread } from '@kames/3box-system'
-const Component = props =>
-<AccessThread
-  space='web3'
-  thread='comments'
-  threadOptions={
-    members: true,
-  }
->
-  <MyFormComponent />
-</AccessThread>
+import React from 'react';
+import {AccessThread} from '3box-ui-system';
+export default props => (
+  <AccessThread space="web3" threadName="comments">
+    <Atom.Span tag>Thread Join Complete</Atom.Span>
+  </AccessThread>
+);
 ```
 
 ### Threads
@@ -114,38 +148,36 @@ const Component = props =>
 #### ThreadJoin
 
 ```js
-import {ThreadJoin} from '@kames/3box-system';
-const Component = props => {
-  return (
-    <ThreadJoin space="web3" threadName="comments">
-      <span>Join Thread</span>
-    </ThreadJoin>
-  );
-};
+import React from 'react'
+import { Login } from '3box-ui-system'
+export default props => (
+  <ThreadJoin
+    space='3box'
+    threadName='commentThread'
+    options={{members: false}}
+  />
 ```
 
 #### PostPublish
 
 ```js
-import {PostPublish} from '@kames/3box-system';
-const Component = props => {
-  return (
-    <PostPublish threadName="comments">
-      <span>delete thread message</span>
-    </PostPublish>
-  );
-};
+import React from 'react'
+import { ThreadPostPublish } from '3box-ui-system'
+export default props => (
+<ThreadPostPublish
+  threadName='comments'
+  post={
+    comment: 'What if you could... Would you?'
+  }
+/>
 ```
 
 ### PostDelete
 
 ```js
-import {PostDelete} from '@kames/3box-system';
-const Component = props => {
-  return (
-    <PostDelete threadName="comments" postId="123456689">
-      <span>Delete Message</span>
-    </PostDelete>
-  );
-};
+import React from 'react';
+import {ThreadPostDelete} from '3box-ui-system';
+export default props => (
+  <ThreadPostDelete threadName="comments" postId="123456789" />
+);
 ```

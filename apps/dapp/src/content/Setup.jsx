@@ -1,61 +1,46 @@
 
 import { Site } from 'templates'
+import {
+AddLoginExample,
+EnableEthereumExample,
+InitProviderExample,
+SpaceOpenExample,
+ThreadJoinExample,
+} from 'content/examples'
 
-const showcase = {
-  title: 'Get Setup.',
-  tagline: 'Installing 3Box Extensions and Contributing.',
-}
+import { CodeHighlight, Markdown } from '@horizin/design-system-molecules'
 
 /* --- Component --- */
-const Home = props =>
-  <Site sx={{ bg: 'smoke' }} sxMain={{ alignItems: 'center', justifyContent: 'center' }}>
-    <Molecule.Card
-      layout='showcase'
-      variants={['large', 'centered']}
-      sx={{
-        p: 3
-      }}
-      sxTitle={{
-        fontWeight: 700
-      }}
-      sxTagline={{
-        fontWeight: 300
-      }}
-      sxMain={{
-        maxWidth: 980
-      }}
-      {...showcase}
-      image={null}
-    />
+export default () =>
+<Site sx={{ bg: 'paper', color: 'text', minHeight: '100vh' }} sxMain={{ alignItems: 'center', justifyContent: 'center' }}>
+  <Atom.Container sx={{maxWidth: [1,1,780, 780]}}>
+    <Atom.Box sx={{py: 3, textAlign: 'center'}}>
+      <Atom.Heading giga>3Box Extensions Setup</Atom.Heading>
+      <Atom.Span tag sx={{p:3}}>Under Construction</Atom.Span>
+      <CodeHighlight>
+        git clone git@github.com:KamesCG/3box-extensions.git
+      </CodeHighlight>
+    </Atom.Box>
+    <Atom.Card neutral>
+      <Markdown>
+{`
+## Getting Started
 
-    <Install3BoxExtensions />
-  </Site>
+\`git clone git:github.com/KamesCG/3box-extensions\`
 
-export default Home
+###Terminal 1
+\`yarn\`
+\`yarn watch\`
 
-const Install3BoxExtensions = props => {
-  return (
-    <Atom.Container my={3}>
-      <Atom.Flex alignCenter sx={{ bg: 'neutral', color: 'text', p: 3, flex: 1, borderRadius: 8 }}>
-        <Atom.Flex column flex={2} sx={{p: 4}}>
-          <Atom.Heading md heavy m={0}>3Box Extensions</Atom.Heading>
-          <Atom.Paragraph m={0}>
-            Project currently under rapid development.
-          </Atom.Paragraph>
-          <Atom.Paragraph>
-            Packages will be released on NPM when ready for production.
-          </Atom.Paragraph>
-        </Atom.Flex>
-        <Atom.Flex flex={3}>
-          <Atom.Box gradient='gray' sx={{ borderRadius: 7, boxShadow: 1, p: 3, px: 4, width: '100%' }}>
-            <code>
-              <pre>
-                {`$ git clone git@github.com:KamesCG/3box-extensions.git`}
-              </pre>
-            </code>
-          </Atom.Box>
-        </Atom.Flex>
-      </Atom.Flex>
+### Terminal 2 (Demo)
+\`cd apps/dapp ; yarn start\`
+
+The best place for developers to get understand what's happening is to start at the root module, which is packages/3box-ui-state.
+`}
+      </Markdown>
+    </Atom.Card>
     </Atom.Container>
-  )
-}
+</Site>
+
+
+

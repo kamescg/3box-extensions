@@ -1,6 +1,6 @@
 
 /* --- Global --- */
-import { ThemeProvider as ThemeProviderEmotion } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
 import { PortalProvider, PortalTree } from "react-portal-system";
 import { BoxProvider } from '3box-ui-system'
 
@@ -9,13 +9,13 @@ import theme from './assets/theme'
 
 export default props => {
 	return (
-		<ThemeProviderEmotion theme={theme}>
+		<ThemeProviders theme={theme}>
 			<PortalProvider>
 				<BoxProvider>
 					<PortalTree />
 					{props.children}
 				</BoxProvider>
 			</PortalProvider>
-		</ThemeProviderEmotion>
+		</ThemeProviders>
 	)
 }

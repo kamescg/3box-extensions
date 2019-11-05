@@ -44,10 +44,9 @@ const Home = props =>
       {...showcase}
       image={null}
     />
-    <Atom.Span variants={['tag']} effects={['white']}>Rapidly build social decentralized applications.</Atom.Span>
+    <Atom.Span variants={['tag']} effects={['white']}>Rapidly buidl Decentralized Applications</Atom.Span>
     <Atom.Container maxWidth={980} sx={{ my: 5 }}>
       <ModuleFeatured
-        url='/3box-ui-system-render'
         title='3Box UI State'
         content='The 3Box UI State library utilizes the latest updates in React: Context, Hooks and Effects. Providing a lighweight state management layer to handle core 3Box interactions. Easily request data and listen to global state from any application.'
         image='https://image.flaticon.com/icons/svg/390/390566.svg'
@@ -56,7 +55,6 @@ const Home = props =>
         }}
       />
       <ModuleFeatured
-        url='/3box-ui-system'
         title='3Box UI System'
         content='The 3Box UI State library helps frontend developers easily start integrating core 3Box decentralized identity features: authentication, storage and messaging. Start adding login buttons, access control, storaging merging, thread listening, and more in just a couple of minutes'
         image='https://image.flaticon.com/icons/svg/180/180100.svg'
@@ -68,29 +66,11 @@ const Home = props =>
         title='3Box UI System Render'
         content='The 3Box UI State library helps developers predictably fetch data from 3Box profiles, spaces and threads and pass that data into render components. Easily render lists, items and mutate data structures without worrying about minor React render details (element, component, factory, etc...). '
         image='https://image.flaticon.com/icons/svg/904/904905.svg'
-        url='/3box-ui-system-render'
         sx={{
           my: 3
         }}
       />
-      <ModuleFeatured
-        title='3Box UI Profiles'
-        url='/3box-ui-profiles'
-        content='Coming Soon.'
-        image='https://image.flaticon.com/icons/svg/1673/1673472.svg'
-        sx={{
-          my: 3
-        }}
-      />
-      <ModuleFeatured
-        title='3Box Content Management System'
-        url='/3box-cms'
-        content='Coming Soon.'
-        image='https://image.flaticon.com/icons/svg/1673/1673472.svg'
-        sx={{
-          my: 3
-        }}
-      />
+
     </Atom.Container>
 
     <Atom.Container>
@@ -147,9 +127,6 @@ const ModuleFeatured = props => {
         <Atom.Paragraph>
           {props.content}
         </Atom.Paragraph>
-        <Molecule.Link to={props.url}>
-          <Atom.Button>Learn More</Atom.Button>
-        </Molecule.Link>
       </Atom.Flex>
     </Atom.Flex>
   )

@@ -18,7 +18,7 @@ const CodeExampleString = (
 `import React from 'react'
 import { AccessThread } from '3box-ui-system'
 export default props =>
-<AccessThread>
+<AccessThread space='web3' threadName='comments' >
   <Atom.Span tag>Thread Join Complete</Atom.Span>
 </AccessThread>
 `

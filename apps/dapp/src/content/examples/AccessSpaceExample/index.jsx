@@ -11,7 +11,7 @@ export default () =>
 />
 
 const Example = () =>
-<AccessSpace>
+<AccessSpace space='web3'>
   <Atom.Span tag>Space Open Complete</Atom.Span>
 </AccessSpace>
 
@@ -19,7 +19,7 @@ const CodeExampleString = (
 `import React from 'react'
 import { AccessAuthentication } from '3box-ui-system'
 export default props =>
-<AccessSpace>
+<AccessSpace space='web3'>
   <Atom.Span tag>Space Open Complete</Atom.Span>
 </AccessSpace>
 `

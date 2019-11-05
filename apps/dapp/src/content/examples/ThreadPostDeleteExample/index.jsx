@@ -18,7 +18,7 @@ const CodeExampleString = (
   import { ThreadPostDelete } from '3box-ui-system'
   export default props => (
     <ThreadPostDelete
-      threadName='commentThread'
+      threadName='comments'
       postId='123456789'
     />
   )
