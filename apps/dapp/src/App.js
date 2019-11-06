@@ -19,10 +19,10 @@ import Content from './content'
 
 /* --- Component --- */
 export default () =>
-	<Providers>
-		<Router width='100%'>
-			<Home path='/' />
-			<Profile path='/profile' />
-			<Content path='/*' /> 
-		</Router>
-	</Providers>
+<Providers>
+	<Router width='100%'>
+		<Home path='/' />
+		<Profile path='/profile' />
+		<Content path='/*' /> 
+	</Router>
+</Providers>

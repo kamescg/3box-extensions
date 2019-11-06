@@ -7,8 +7,8 @@ import {Login, StorageSetMerge} from '3box-ui-system'
 
 export default () =>
 <CodeCard
-  title='Profile Details'
-  summary='Set profile details.'
+  title='Social Details'
+  summary='Share your online social accounts.'
   example={<StorageSetForm />}
   code={CodeExampleString}
 />
